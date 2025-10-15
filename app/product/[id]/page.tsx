@@ -1,5 +1,4 @@
-import { getProductById } from "@/lib/actions/products"
-import { getWishlistProductIds } from "@/lib/actions/wishlist"
+
 import ProductDetailPage from "@/components/product-detail-page"
 import { notFound } from "next/navigation"
 
@@ -8,15 +7,10 @@ interface ProductPageProps {
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-    const product = await getProductById((await params).id)
 
-    if (!product) {
-        notFound()
-    }
 
-    const inWishlist = await getWishlistProductIds()
 
-    return <ProductDetailPage product={product} isInWishlist={inWishlist.includes(product.id)} />
+    return <ProductDetailPage />
 }
 
 export async function generateMetadata({ params }: ProductPageProps) {

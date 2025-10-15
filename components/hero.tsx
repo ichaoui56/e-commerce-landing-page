@@ -1,86 +1,214 @@
+"use client"
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useState, useEffect } from "react"
+import { ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram } from "lucide-react"
 
-const heroCards = [
+const carouselSlides = [
   {
-    title: "TONGS",
-    subtitle: "SOLDES D'ÉTÉ -70% DE RÉDUCTION",
-    buttonText: "ACHETER MAINTENANT",
-    imageUrl: "hero-img1.jpeg",
-    alt: "Man in summer shirt",
-    bgColor: "bg-[#e6d7c3]",
-    position: "start",
-    link: "/shop/kids",
+    desktopImage: "/images/banner-1.png",
+    mobileImage: "/images/banner-1-mobile.png",
+    title: "CRÈME HYDRATANTE VISAGE",
+    subtitle: "Soin Nourrissant, Hydratant et Protecteur pour Tous Types de Peaux",
+    buttonText: "DÉCOUVRIR MAINTENANT",
+    link: "/shop",
   },
   {
-    title: "ACCESSOIRES",
-    subtitle: "HIVER 2019 JUSQU'À -50%",
-    buttonText: "ACHETER MAINTENANT",
-    imageUrl: "hero-img2.jpeg",
-    alt: "Elegant silk scarf",
-    bgColor: "bg-gray-200",
-    position: "center",
-    link: "/shop/homme",
+    desktopImage: "/images/banner-2.png",
+    mobileImage: "/images/banner-2-mobile.png",
+    title: "H&S LINE SPF 50+",
+    subtitle:
+      "Protégez votre peau avec l'écran solaire H&S Line SPF 50+ : une protection extrême, une texture invisible, pour tous types de peaux",
+    buttonText: "VOIR PLUS",
+    link: "/products/sunscreen",
+  },
+]
+
+const featureCards = [
+  {
+    title: "NOS CONSEILS",
+    buttonText: "CLIQUER ICI",
+    imageUrl: "/woman-with-closed-eyes-smiling-skincare.jpg",
+    alt: "Nos conseils beauté",
+    link: "/conseils",
   },
   {
-    title: "NOUVEAUTÉS",
-    subtitle: "VÊTEMENTS DE SPORT FEMME",
-    buttonText: "ACHETER MAINTENANT",
-    imageUrl: "hero-img3.jpeg",
-    alt: "Woman in sportswear",
-    bgColor: "bg-gray-300",
-    position: "end",
-    link: "/shop/pyjamas",
+    title: "NOTRE CATALOGUE",
+    buttonText: "VOIR PLUS",
+    imageUrl: "/hs-line-skincare-products-bottles-and-boxes.jpg",
+    alt: "Notre catalogue de produits",
+    link: "/catalogue",
+  },
+  {
+    title: "NOUS CONTACTER",
+    buttonText: "VOIR PLUS",
+    imageUrl: "/contact-us-communication-icons.jpg",
+    alt: "Nous contacter",
+    link: "/contact",
+    isContact: true,
   },
 ]
 
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+
+  // Auto-play carousel
+  useEffect(() => {
+    if (!isAutoPlaying) return
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselSlides.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [isAutoPlaying])
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % carouselSlides.length)
+    setIsAutoPlaying(false)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + carouselSlides.length) % carouselSlides.length)
+    setIsAutoPlaying(false)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
+    setIsAutoPlaying(false)
+  }
+
   return (
-    <section className="min-h-screen flex flex-col">
-      {/* Main Hero Card */}
-      <div className="flex-1 relative bg-black bg-opacity-20 min-h-[60vh]">
-        <Image
-          src="https://i.ibb.co/SX34mm51/Whats-App-Image-2025-08-09-at-17-27-30.jpg"
-          alt="Woman in denim outfit"
-          fill
-          className="object-cover z-0"
-        />
-        <div className="relative z-10 flex items-center justify-center h-full min-h-[60vh]">
-          <div className="text-center text-white">
-            <p className="text-sm font-light mb-2 tracking-wider">NOUVELLE COLLECTION</p>
-            <h1 className="text-4xl md:text-6xl font-light mb-6 tracking-wide">BOUTIQUE FEMME</h1>
-            <Link
-              href="/shop">
-              <Button
-                variant="outline"
-                className="bg-transparent font-light border-b-2 border-white text-white hover:bg-white hover:text-black transition-colors duration-300 px-8 py-3 text-sm font-light tracking-wider"
-              >
-                DÉCOUVRIR MAINTENANT
-              </Button>
-            </Link>
-          </div>
+    <section className="min-h-screen flex flex-col gap-4 md:gap-6 pb-4 md:pb-6">
+      {/* Main Hero Carousel */}
+      <div className="relative bg-gradient-to-br from-cyan-50 to-cyan-100 min-h-[50vh] md:min-h-[65vh] overflow-hidden group">
+        {/* Carousel Slides */}
+        <div className="relative h-full min-h-[50vh] md:min-h-[65vh]">
+          {carouselSlides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-700 ${
+                index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            >
+              <Image
+                src={slide.desktopImage || "/placeholder.svg"}
+                alt={slide.title}
+                fill
+                className="hidden md:block object-cover"
+                priority={index === 0}
+              />
+              <Image
+                src={slide.mobileImage || "/placeholder.svg"}
+                alt={slide.title}
+                fill
+                className="block md:hidden object-cover"
+                priority={index === 0}
+              />
+
+              {/* Content */}
+              <div className="relative z-20 flex items-center justify-center h-full px-4 md:px-8">
+                <div className="text-center max-w-4xl">
+                  <Link href={slide.link}>
+                    <Button className="bg-cyan-600 hover:bg-cyan-700 text-white border-none px-6 md:px-8 py-2.5 md:py-3 text-sm md:text-base font-semibold tracking-wider transition-all duration-300 hover:scale-105 shadow-lg">
+                      {slide.buttonText}
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-30 bg-white/80 hover:bg-white text-cyan-600 p-2 md:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 shadow-lg"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-30 bg-white/80 hover:bg-white text-cyan-600 p-2 md:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 shadow-lg"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
+        </button>
+
+        {/* Dots Indicator */}
+        <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:gap-3">
+          {carouselSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`transition-all duration-300 rounded-full ${
+                index === currentSlide
+                  ? "bg-cyan-600 w-6 md:w-8 h-2 md:h-2.5"
+                  : "bg-white/60 hover:bg-white/80 w-2 md:w-2.5 h-2 md:h-2.5"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
 
-      {/* Three Cards Row */}
-      <div className="flex-1 grid grid-cols-1 gap-2 md:grid-cols-3">
-        {heroCards.map((card, index) => (
-          <div key={index} className={`relative mt-2 overflow-hidden ${card.bgColor} group`}>
-            <Image src={card.imageUrl || "/placeholder.svg"} alt={card.alt} fill className="object-cover z-0" />
-            <div className="relative z-10 flex flex-col justify-center items-center text-center h-full p-8 bg-black bg-opacity-10">
-              <p className="text-xs font-light text-white mb-2 tracking-wider">{card.title}</p>
-              <h3 className="text-lg md:text-xl font-light text-white mb-4 tracking-wide leading-tight">
-                {card.subtitle}
-              </h3>
-              <Link
-                href={card.link}
-                className="text-xs font-light text-white border-b-2 border-white pb-1 hover:text-black hover:border-black transition-colors duration-300 tracking-wider"
-              >
-                {card.buttonText}
-              </Link>
+      {/* Three Feature Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 px-4 md:px-6">
+        {featureCards.map((card, index) => (
+          <Link
+            key={index}
+            href={card.link}
+            className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] min-h-[280px] md:min-h-[350px]"
+          >
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <Image
+                src={card.imageUrl || "/placeholder.svg"}
+                alt={card.alt}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20 group-hover:from-black/80 transition-all duration-500" />
             </div>
-          </div>
+
+            {/* Content */}
+            <div className="relative z-10 flex flex-col justify-between h-full p-6 md:p-8">
+              <div>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4 tracking-wide drop-shadow-lg">
+                  {card.title}
+                </h3>
+
+                {/* Contact Icons - Only for contact card */}
+                {card.isContact && (
+                  <div className="flex gap-3 md:gap-4 mb-4 md:mb-6">
+                    <div className="bg-white/20 backdrop-blur-sm p-2 md:p-3 rounded-full hover:bg-white/30 transition-all duration-300">
+                      <Phone className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm p-2 md:p-3 rounded-full hover:bg-white/30 transition-all duration-300">
+                      <Mail className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm p-2 md:p-3 rounded-full hover:bg-white/30 transition-all duration-300">
+                      <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm p-2 md:p-3 rounded-full hover:bg-white/30 transition-all duration-300">
+                      <Instagram className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Button */}
+              <div className="flex justify-start">
+                <span className="inline-block bg-white text-gray-900 px-6 md:px-8 py-2.5 md:py-3 rounded-full font-semibold text-sm md:text-base tracking-wide transition-all duration-300 group-hover:bg-cyan-600 group-hover:text-white group-hover:scale-105 shadow-lg">
+                  {card.buttonText}
+                </span>
+              </div>
+            </div>
+          </Link>
         ))}
       </div>
     </section>

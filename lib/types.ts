@@ -1,57 +1,15 @@
-// lib/types/index.ts
-
-// Product interfaces
 export interface ProductWithDetails {
   id: string
   name: string
   description: string | null
-  category_id: string | null
-  solde_percentage: number | null
+  price: number
+  images: string[]
+  category: string
+  properties: string[]
+  inStock: boolean
   top_price: boolean
-  created_at: Date
-  updated_at: Date
-  category: {
-    id: string
-    name: string
-    slug: string
-  } | null
-  colors: {
-    id: string
-    name: string
-    hex_code: string
-  }[]
-  images: {
-    id: string
-    color_id: string
-    image_url: string
-    is_primary: boolean
-  }[]
-  variants: {
-    id: string
-    color_id: string
-    size_id: string
-    stock_quantity: number
-    price: number
-    size: {
-      id: string
-      label: string
-    }
-    color: {
-      id: string
-      name: string
-      hex: string | null
-    }
-  }[]
-  sizes: {
-    id: string
-    label: string
-  }[]
-  base_price: number
-  current_price: number
-  discount_percentage: number
-  is_featured: boolean
-  total_stock: number
-  status: "in_stock" | "low_stock" | "out_of_stock"
+  createdAt: Date
+  updatedAt: Date
 }
 
 export interface Category {

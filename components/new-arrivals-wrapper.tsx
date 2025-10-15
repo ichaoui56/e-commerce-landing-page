@@ -1,18 +1,7 @@
-// app/new-arrivals/page.tsx
+// app/new-arrivals/page.tsx or components/new-arrivals-wrapper.tsx
 import NewArrivals from "@/components/new-arrivals"
-import { getFeaturedProducts } from "@/lib/actions/products"
-import { getWishlistProductIds } from "@/lib/actions/wishlist"
 
 export default async function NewArrivalsWrapper() {
-  const [featuredProducts, wishlistProductIds] = await Promise.all([
-    getFeaturedProducts(),
-    getWishlistProductIds()
-  ])
-
-  return (
-    <NewArrivals
-      featuredProducts={featuredProducts}
-      wishlistProductIds={wishlistProductIds}
-    />
-  )
+  // Pass undefined to use mock data in the component
+  return <NewArrivals featuredProducts={undefined as any} wishlistProductIds={undefined as any} />
 }

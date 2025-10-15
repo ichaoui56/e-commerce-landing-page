@@ -11,6 +11,77 @@ interface NewArrivalsProps {
   wishlistProductIds: string[]
 }
 
+// Mock data extracted from the PDF
+const mockProducts: ProductWithDetails[] = [
+  {
+    id: "1",
+    name: "H&S Shampoing DS",
+    description: "Soin capillaire qui réduit la prolifération des pellicules, régule les démangeaisons et calme les irritations du cuir chevelu. Pour pellicules modérées ou sévères. Dermite Séborrhéique.",
+    price: 24.99,
+    images: [
+      "/images/products/shampoo-ds-1.jpg",
+      "/images/products/shampoo-ds-2.jpg",
+      "/images/products/shampoo-ds-3.jpg"
+    ],
+    category: "Soins Cheveux",
+    properties: ["Anti Fongique, Antibactérien", "Séborégulateur", "Apaisant"],
+    inStock: true,
+    top_price: true,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: "2",
+    name: "H&S Crème réparatrice",
+    description: "Soin qui favorise, améliore et accélère le processus de cicatrisation de la peau chez l'enfant et chez l'adulte. Pour le visage et le corps.",
+    price: 29.99,
+    images: [
+      "/images/products/creme-reparatrice-1.jpg",
+      "/images/products/creme-reparatrice-2.jpg"
+    ],
+    category: "Soins Corps",
+    properties: ["Nourrit et aide à régénérer la peau", "Favorise la réparation tissulaire", "Améliore l'aspect de la cicatrice"],
+    inStock: true,
+    top_price: true,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: "3",
+    name: "H&S Spray Anti Septique",
+    description: "Solution aqueuse antiseptique et anti fongique pour Enfant et adulte.",
+    price: 19.99,
+    images: [
+      "/images/products/spray-antisep-1.jpg",
+      "/images/products/spray-antisep-2.jpg"
+    ],
+    category: "Premiers Soins",
+    properties: ["Anti bactérien", "Ne tache pas", "Ne pique pas"],
+    inStock: true,
+    top_price: true,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: "4",
+    name: "H&S Gel Nettoyant Surgras",
+    description: "Gel nettoyant sans savon, conçu pour l'hygiène des peaux sèches, très sèches ou à tendance atopique. Pour Nouveaux-Nés, Enfants, Adultes.",
+    price: 22.99,
+    images: [
+      "/images/products/gel-nettoyant-1.jpg",
+      "/images/products/gel-nettoyant-2.jpg"
+    ],
+    category: "Soins Corps",
+    properties: ["Assainit et apaise la peau", "Nettoie en douceur sans dessécher", "Prévient des sensations de tiraillement"],
+    inStock: true,
+    top_price: true,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  }
+]
+
+const mockWishlistProductIds: string[] = ["2"]
+
 export default function NewArrivals({
   featuredProducts,
   wishlistProductIds,
@@ -21,6 +92,18 @@ export default function NewArrivals({
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+
+  // Use mock data if no products provided or if empty array
+  const productsToDisplay = (!featuredProducts || featuredProducts.length === 0) 
+    ? mockProducts 
+    : featuredProducts
+  
+  const wishlistIds = (!wishlistProductIds || wishlistProductIds.length === 0)
+    ? mockWishlistProductIds
+    : wishlistProductIds
+
+  // Limit to 4 products
+  const displayProducts = productsToDisplay.slice(0, 4)
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,21 +118,18 @@ export default function NewArrivals({
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  if (!featuredProducts || featuredProducts.length === 0) {
+  if (!displayProducts || displayProducts.length === 0) {
     return (
       <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Nouveautés</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Découvrez notre dernière collection de pièces de mode haut de gamme, soigneusement sélectionnées pour un style de vie moderne.
+              Découvrez notre dernière collection de soins dermatologiques, soigneusement sélectionnés pour une peau saine.
             </p>
           </div>
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">Aucun produit en vedette disponible pour le moment.</p>
-            <p className="text-sm text-gray-400 mt-2">
-              Make sure you have products with "top_price" set to true in your database.
-            </p>
           </div>
         </div>
       </section>
@@ -58,7 +138,7 @@ export default function NewArrivals({
 
   // Carousel navigation functions
   const nextSlide = () => {
-    if (currentIndex < featuredProducts.length - 1) {
+    if (currentIndex < displayProducts.length - 1) {
       setCurrentIndex(prev => prev + 1)
       scrollToIndex(currentIndex + 1)
     }
@@ -74,7 +154,7 @@ export default function NewArrivals({
   const scrollToIndex = (index: number) => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current
-      const cardWidth = container.scrollWidth / featuredProducts.length
+      const cardWidth = container.scrollWidth / displayProducts.length
       container.scrollTo({
         left: cardWidth * index,
         behavior: 'smooth'
@@ -117,38 +197,38 @@ export default function NewArrivals({
     // Snap to nearest card
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current
-      const cardWidth = container.scrollWidth / featuredProducts.length
+      const cardWidth = container.scrollWidth / displayProducts.length
       const newIndex = Math.round(container.scrollLeft / cardWidth)
-      setCurrentIndex(Math.max(0, Math.min(newIndex, featuredProducts.length - 1)))
+      setCurrentIndex(Math.max(0, Math.min(newIndex, displayProducts.length - 1)))
       scrollToIndex(newIndex)
     }
   }
 
   const canGoPrev = currentIndex > 0
-  const canGoNext = currentIndex < featuredProducts.length - 1
+  const canGoNext = currentIndex < displayProducts.length - 1
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className=" mx-auto px-4">
+      <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-            New Arrivals
+            Nouveautés
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-            Discover our latest collection of premium fashion pieces, carefully curated for the modern lifestyle.
+            Découvrez notre dernière collection de soins dermatologiques haute tolérance, soigneusement formulés pour les peaux sensibles.
           </p>
           <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">
-            <div className="w-2 h-2 bg-[#e94491] rounded-full"></div>
-            <span>{featuredProducts.length} featured products</span>
+            <div className="w-2 h-2 bg-cyan-600 rounded-full"></div>
+            <span>{displayProducts.length} produits en vedette</span>
           </div>
         </div>
 
         {/* Desktop Grid Layout (≥1024px) */}
         {!isCarouselMode ? (
-          <div className="grid grid-cols-4 gap-8 mb-16">
-            {featuredProducts.slice(0, 4).map((product) => {
-              const isInWishlist = wishlistProductIds.includes(product.id)
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {displayProducts.map((product) => {
+              const isInWishlist = wishlistIds.includes(product.id)
               return (
                 <div key={product.id} className="transform hover:scale-105 transition-transform duration-300">
                   <ProductCard product={product} isInWishlist={isInWishlist} />
@@ -158,7 +238,7 @@ export default function NewArrivals({
           </div>
         ) : (
           /* Mobile/Tablet Carousel (<1024px) */
-          <div className="relative mb-16">
+          <div className="relative mb-12">
             {/* Navigation Arrows */}
             <button
               onClick={prevSlide}
@@ -203,8 +283,8 @@ export default function NewArrivals({
               onTouchMove={handleTouchMove}
               onTouchEnd={handleDragEnd}
             >
-              {featuredProducts.map((product, index) => {
-                const isInWishlist = wishlistProductIds.includes(product.id)
+              {displayProducts.map((product, index) => {
+                const isInWishlist = wishlistIds.includes(product.id)
                 return (
                   <div 
                     key={product.id} 
@@ -221,7 +301,7 @@ export default function NewArrivals({
 
             {/* Dots Indicator */}
             <div className="flex justify-center mt-8 space-x-2">
-              {featuredProducts.map((_, index) => (
+              {displayProducts.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => {
@@ -230,7 +310,7 @@ export default function NewArrivals({
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex 
-                      ? 'bg-[#e94491] scale-125' 
+                      ? 'bg-cyan-600 scale-125' 
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   aria-label={`Aller au produit ${index + 1}`}
@@ -241,13 +321,13 @@ export default function NewArrivals({
         )}
 
         {/* View All Button */}
-        <div className="text-center">
+        <div className="text-center mt-12">
           <Link
             href="/shop"
-            className="inline-flex items-center px-10 py-4 bg-[#e94491] text-white font-semibold rounded-full hover:bg-[#d73d85] transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-cyan-600 to-cyan-700 text-white font-semibold rounded-full hover:from-cyan-700 hover:to-cyan-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Voir tous les produits
-            <ChevronRight className="ml-2" size={20} />
+            <ChevronRight size={20} />
           </Link>
         </div>
       </div>
