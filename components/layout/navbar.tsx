@@ -189,9 +189,9 @@ export default function Navbar() {
   // Create main menu items with dynamic categories
   const mainMenuItems = [
     { name: "ACCUEIL", href: "/", hasSubmenu: false },
-    { name: "NOS PRODUITS", href: "/shop", hasSubmenu: true, submenu: [] },
+    { name: "NOS PRODUITS", href: "/shop", hasSubmenu: false },
     { name: "À PROPOS DE NOUS", href: "/about", hasSubmenu: false },
-    { name: "NOS CONSEILS", href: "/contact", hasSubmenu: false },
+    { name: "NOS CONSEILS", href: "/conseils", hasSubmenu: false },
     { name: "NOUS CONTACTER", href: "/contact", hasSubmenu: false },
   ]
 
@@ -407,7 +407,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Search Bar */}
-                <div className="p-4 border-b border-gray-200 bg-gray-50">
+                {/* <div className="p-4 border-b border-gray-200 bg-gray-50">
                   <div className="relative">
                     <Input
                       type="search"
@@ -418,7 +418,7 @@ export default function Navbar() {
                       <Search className="h-5 w-5" />
                     </button>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Enhanced Tabs with better styling */}
                 <div className="flex border-b border-gray-200 bg-white">
