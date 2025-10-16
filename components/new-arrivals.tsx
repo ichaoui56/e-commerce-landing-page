@@ -1,6 +1,8 @@
 "use client"
 
-import { ProductWithDetails } from "@/lib/types"
+import type React from "react"
+
+import type { ProductWithDetails } from "@/lib/types"
 import ProductCard from "./product-card"
 import { useState, useEffect, useRef } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
@@ -11,7 +13,6 @@ interface NewArrivalsProps {
   wishlistProductIds: string[]
 }
 
-// Mock data extracted from the PDF
 const mockProducts: ProductWithDetails[] = [
   {
     id: "1",
@@ -19,9 +20,8 @@ const mockProducts: ProductWithDetails[] = [
     description: "Soin capillaire qui réduit la prolifération des pellicules, régule les démangeaisons et calme les irritations du cuir chevelu. Pour pellicules modérées ou sévères. Dermite Séborrhéique.",
     price: 24.99,
     images: [
-      "/images/products/shampoo-ds-1.jpg",
-      "/images/products/shampoo-ds-2.jpg",
-      "/images/products/shampoo-ds-3.jpg"
+      "/images/products/shampoing-ds-2.png",
+      "/images/products/shampoing-ds-1.png"
     ],
     category: "Soins Cheveux",
     properties: ["Anti Fongique, Antibactérien", "Séborégulateur", "Apaisant"],
@@ -36,8 +36,8 @@ const mockProducts: ProductWithDetails[] = [
     description: "Soin qui favorise, améliore et accélère le processus de cicatrisation de la peau chez l'enfant et chez l'adulte. Pour le visage et le corps.",
     price: 29.99,
     images: [
-      "/images/products/creme-reparatrice-1.jpg",
-      "/images/products/creme-reparatrice-2.jpg"
+      "/images/products/creme-reparatrice-1.png",
+      "/images/products/creme-reparatrice-2.png"
     ],
     category: "Soins Corps",
     properties: ["Nourrit et aide à régénérer la peau", "Favorise la réparation tissulaire", "Améliore l'aspect de la cicatrice"],
@@ -52,8 +52,8 @@ const mockProducts: ProductWithDetails[] = [
     description: "Solution aqueuse antiseptique et anti fongique pour Enfant et adulte.",
     price: 19.99,
     images: [
-      "/images/products/spray-antisep-1.jpg",
-      "/images/products/spray-antisep-2.jpg"
+      "/images/products/spray-antiseptique-1.png",
+      "/images/products/spray-antiseptique-2.png"
     ],
     category: "Premiers Soins",
     properties: ["Anti bactérien", "Ne tache pas", "Ne pique pas"],
@@ -68,8 +68,8 @@ const mockProducts: ProductWithDetails[] = [
     description: "Gel nettoyant sans savon, conçu pour l'hygiène des peaux sèches, très sèches ou à tendance atopique. Pour Nouveaux-Nés, Enfants, Adultes.",
     price: 22.99,
     images: [
-      "/images/products/gel-nettoyant-1.jpg",
-      "/images/products/gel-nettoyant-2.jpg"
+      "/images/products/gel-nettoyant-2.png",
+      "/images/products/gel-nettoyant-1.png"
     ],
     category: "Soins Corps",
     properties: ["Assainit et apaise la peau", "Nettoie en douceur sans dessécher", "Prévient des sensations de tiraillement"],
@@ -82,10 +82,7 @@ const mockProducts: ProductWithDetails[] = [
 
 const mockWishlistProductIds: string[] = ["2"]
 
-export default function NewArrivals({
-  featuredProducts,
-  wishlistProductIds,
-}: NewArrivalsProps) {
+export default function NewArrivals({ featuredProducts, wishlistProductIds }: NewArrivalsProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isCarouselMode, setIsCarouselMode] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
@@ -94,15 +91,11 @@ export default function NewArrivals({
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   // Use mock data if no products provided or if empty array
-  const productsToDisplay = (!featuredProducts || featuredProducts.length === 0) 
-    ? mockProducts 
-    : featuredProducts
-  
-  const wishlistIds = (!wishlistProductIds || wishlistProductIds.length === 0)
-    ? mockWishlistProductIds
-    : wishlistProductIds
+  const productsToDisplay = !featuredProducts || featuredProducts.length === 0 ? mockProducts : featuredProducts
 
-  // Limit to 4 products
+  const wishlistIds =
+    !wishlistProductIds || wishlistProductIds.length === 0 ? mockWishlistProductIds : wishlistProductIds
+
   const displayProducts = productsToDisplay.slice(0, 4)
 
   useEffect(() => {
@@ -114,8 +107,8 @@ export default function NewArrivals({
     }
 
     handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
   }, [])
 
   if (!displayProducts || displayProducts.length === 0) {
@@ -125,7 +118,8 @@ export default function NewArrivals({
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Nouveautés</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Découvrez notre dernière collection de soins dermatologiques, soigneusement sélectionnés pour une peau saine.
+              Découvrez notre dernière collection de soins dermatologiques, soigneusement sélectionnés pour une peau
+              saine.
             </p>
           </div>
           <div className="text-center py-12">
@@ -139,14 +133,14 @@ export default function NewArrivals({
   // Carousel navigation functions
   const nextSlide = () => {
     if (currentIndex < displayProducts.length - 1) {
-      setCurrentIndex(prev => prev + 1)
+      setCurrentIndex((prev) => prev + 1)
       scrollToIndex(currentIndex + 1)
     }
   }
 
   const prevSlide = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(prev => prev - 1)
+      setCurrentIndex((prev) => prev - 1)
       scrollToIndex(currentIndex - 1)
     }
   }
@@ -157,7 +151,7 @@ export default function NewArrivals({
       const cardWidth = container.scrollWidth / displayProducts.length
       container.scrollTo({
         left: cardWidth * index,
-        behavior: 'smooth'
+        behavior: "smooth",
       })
     }
   }
@@ -212,11 +206,10 @@ export default function NewArrivals({
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-            Nouveautés
-          </h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">Nouveautés</h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-            Découvrez notre dernière collection de soins dermatologiques haute tolérance, soigneusement formulés pour les peaux sensibles.
+            Découvrez notre dernière collection de soins dermatologiques haute tolérance, soigneusement formulés pour
+            les peaux sensibles.
           </p>
           <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">
             <div className="w-2 h-2 bg-cyan-600 rounded-full"></div>
@@ -244,22 +237,22 @@ export default function NewArrivals({
               onClick={prevSlide}
               disabled={!canGoPrev}
               className={`absolute left-2 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-2xl border transition-all duration-300 ${
-                canGoPrev 
-                  ? 'text-gray-700 hover:bg-gray-50 hover:shadow-xl hover:scale-110' 
-                  : 'text-gray-300 cursor-not-allowed opacity-50'
+                canGoPrev
+                  ? "text-gray-700 hover:bg-gray-50 hover:shadow-xl hover:scale-110"
+                  : "text-gray-300 cursor-not-allowed opacity-50"
               }`}
               aria-label="Produit précédent"
             >
               <ChevronLeft size={24} />
             </button>
-            
+
             <button
               onClick={nextSlide}
               disabled={!canGoNext}
               className={`absolute right-2 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-2xl border transition-all duration-300 ${
-                canGoNext 
-                  ? 'text-gray-700 hover:bg-gray-50 hover:shadow-xl hover:scale-110' 
-                  : 'text-gray-300 cursor-not-allowed opacity-50'
+                canGoNext
+                  ? "text-gray-700 hover:bg-gray-50 hover:shadow-xl hover:scale-110"
+                  : "text-gray-300 cursor-not-allowed opacity-50"
               }`}
               aria-label="Produit suivant"
             >
@@ -267,13 +260,13 @@ export default function NewArrivals({
             </button>
 
             {/* Carousel Container */}
-            <div 
+            <div
               ref={scrollContainerRef}
               className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-4 pb-4 cursor-grab active:cursor-grabbing"
-              style={{ 
-                scrollSnapType: 'x mandatory',
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none'
+              style={{
+                scrollSnapType: "x mandatory",
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
               }}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
@@ -286,10 +279,10 @@ export default function NewArrivals({
               {displayProducts.map((product, index) => {
                 const isInWishlist = wishlistIds.includes(product.id)
                 return (
-                  <div 
-                    key={product.id} 
+                  <div
+                    key={product.id}
                     className="flex-none w-[280px] sm:w-[320px] snap-center"
-                    style={{ scrollSnapAlign: 'center' }}
+                    style={{ scrollSnapAlign: "center" }}
                   >
                     <ProductCard product={product} isInWishlist={isInWishlist} />
                   </div>
@@ -309,9 +302,7 @@ export default function NewArrivals({
                     scrollToIndex(index)
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex 
-                      ? 'bg-cyan-600 scale-125' 
-                      : 'bg-gray-300 hover:bg-gray-400'
+                    index === currentIndex ? "bg-cyan-600 scale-125" : "bg-gray-300 hover:bg-gray-400"
                   }`}
                   aria-label={`Aller au produit ${index + 1}`}
                 />
