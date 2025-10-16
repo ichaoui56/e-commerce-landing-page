@@ -8,20 +8,18 @@ import { ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram } from "lucid
 
 const carouselSlides = [
   {
-    desktopImage: "/images/banner-1.png",
-    mobileImage: "/images/banner-1-mobile.png",
+    desktopImage: "/images/hero/banner-1.png",
+    mobileImage: "/images/hero/banner-1-mobile.png",
     title: "CRÈME HYDRATANTE VISAGE",
     subtitle: "Soin Nourrissant, Hydratant et Protecteur pour Tous Types de Peaux",
-    buttonText: "DÉCOUVRIR MAINTENANT",
     link: "/shop",
   },
   {
-    desktopImage: "/images/banner-2.png",
-    mobileImage: "/images/banner-2-mobile.png",
+    desktopImage: "/images/hero/banner-2.png",
+    mobileImage: "/images/hero/banner-2-mobile.jpg",
     title: "H&S LINE SPF 50+",
     subtitle:
       "Protégez votre peau avec l'écran solaire H&S Line SPF 50+ : une protection extrême, une texture invisible, pour tous types de peaux",
-    buttonText: "VOIR PLUS",
     link: "/products/sunscreen",
   },
 ]
@@ -30,21 +28,21 @@ const featureCards = [
   {
     title: "NOS CONSEILS",
     buttonText: "CLIQUER ICI",
-    imageUrl: "/woman-with-closed-eyes-smiling-skincare.jpg",
+    imageUrl: "/images/sub-hero/conseils.jpg",
     alt: "Nos conseils beauté",
     link: "/conseils",
   },
   {
     title: "NOTRE CATALOGUE",
     buttonText: "VOIR PLUS",
-    imageUrl: "/hs-line-skincare-products-bottles-and-boxes.jpg",
+    imageUrl: "/images/sub-hero/catalogue.jpg",
     alt: "Notre catalogue de produits",
     link: "/catalogue",
   },
   {
     title: "NOUS CONTACTER",
     buttonText: "VOIR PLUS",
-    imageUrl: "/contact-us-communication-icons.jpg",
+    imageUrl: "/images/sub-hero/contact.jpg",
     alt: "Nous contacter",
     link: "/contact",
     isContact: true,
@@ -84,7 +82,7 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col gap-4 md:gap-6 pb-4 md:pb-6">
       {/* Main Hero Carousel */}
-      <div className="relative bg-gradient-to-br from-cyan-50 to-cyan-100 min-h-[50vh] md:min-h-[65vh] overflow-hidden group">
+      <div className="relative bg-gradient-to-br from-cyan-50 to-cyan-100 min-h-[50vh] w-[92%] sm:w-[96.5%] rounded-xl mx-auto md:min-h-[65vh] overflow-hidden group sm:mt-[20px] mt-[95px]">
         {/* Carousel Slides */}
         <div className="relative h-full min-h-[50vh] md:min-h-[65vh]">
           {carouselSlides.map((slide, index) => (
@@ -109,16 +107,7 @@ export default function Hero() {
                 priority={index === 0}
               />
 
-              {/* Content */}
-              <div className="relative z-20 flex items-center justify-center h-full px-4 md:px-8">
-                <div className="text-center max-w-4xl">
-                  <Link href={slide.link}>
-                    <Button className="bg-cyan-600 hover:bg-cyan-700 text-white border-none px-6 md:px-8 py-2.5 md:py-3 text-sm md:text-base font-semibold tracking-wider transition-all duration-300 hover:scale-105 shadow-lg">
-                      {slide.buttonText}
-                    </Button>
-                  </Link>
-                </div>
-              </div>
+            
             </div>
           ))}
         </div>

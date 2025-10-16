@@ -31,7 +31,6 @@ export default function Banners() {
                 key={`${repeatIndex}-${index}`}
                 className="flex items-center gap-2 text-sm sm:text-base md:text-xl font-semibold"
               >
-                <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white/90" />
                 <span>{item}</span>
                 <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4" />
               </div>

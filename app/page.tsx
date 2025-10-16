@@ -13,9 +13,9 @@ export default function Home() {
         <Hero />
       </ScrollAnimation>
 
-      <ScrollAnimation delay={0.5} duration={0.5} once={true} className="">
+      {/* <ScrollAnimation delay={0.5} duration={0.5} once={true} className="">
         <Services />
-      </ScrollAnimation>
+      </ScrollAnimation> */}
 
       <ScrollAnimation delay={0.5} duration={0.5} once={true} className="">
         <Banners />

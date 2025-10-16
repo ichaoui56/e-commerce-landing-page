@@ -283,7 +283,7 @@ export default function Navbar() {
             </Button>
 
             <Link href="/" className="flex items-center flex-shrink-0">
-              <Image src="/images/logo.png" alt="H&S Logo" width={70} height={24} className="object-contain" />
+              <Image src="/images/logo/logo.png" alt="H&S Logo" width={70} height={24} className="object-contain" />
             </Link>
 
             <Link
@@ -300,9 +300,9 @@ export default function Navbar() {
           <div className="border-b relative hidden lg:block">
             <div className="container mx-auto px-4 flex justify-between items-center">
               <nav className="flex-1 flex items-center justify-between gap-4 xl:gap-8">
-                <div className="flex items-center justify-between py-4 bg-white flex-shrink-0">
+                <div className="flex items-center justify-between py-2 bg-white flex-shrink-0">
                   <Link href="/">
-                    <Image src="/images/logo.png" alt="H&S Logo" width={80} height={28} className="object-contain" />
+                    <Image src="/images/logo/logo.png" alt="H&S Logo" width={80} height={28} className="object-contain" />
                   </Link>
                 </div>
 
@@ -396,7 +396,7 @@ export default function Navbar() {
                 {/* Enhanced Header with better logo visibility */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-white shadow-sm">
                   <Link href="/" onClick={closeSidebar}>
-                    <Image src="/images/logo.png" alt="H&S Logo" width={80} height={28} className="object-contain" />
+                    <Image src="/images/logo/logo.png" alt="H&S Logo" width={80} height={28} className="object-contain" />
                   </Link>
                   <button
                     onClick={closeSidebar}
@@ -544,9 +544,9 @@ export default function Navbar() {
         >
           <div className="container mx-auto px-4 flex justify-between items-center">
             <nav className="flex-1 flex items-center justify-between gap-4 xl:gap-8">
-              <div className="flex items-center justify-between py-4 bg-white flex-shrink-0">
+              <div className="flex items-center justify-between py-2 bg-white flex-shrink-0">
                 <Link href="/">
-                  <Image src="/images/logo.png" alt="H&S Logo" width={80} height={28} className="object-contain" />
+                  <Image src="/images/logo/logo.png" alt="H&S Logo" width={80} height={28} className="object-contain" />
                 </Link>
               </div>
 

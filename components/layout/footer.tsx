@@ -118,7 +118,7 @@ export default function Footer() {
               <div className="lg:max-w-md space-y-6">
                 <div className="flex items-center gap-3">
                   <div className="relative">
-                    <Image src="/images/logo.png" alt="Logo" width={140} height={45} className="object-contain" />
+                    <Image src="/images/logo/logo.png" alt="Logo" width={140} height={45} className="object-contain" />
                     <div className="absolute -inset-2 bg-gradient-to-r from-cyan-600/10 to-cyan-700/10 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 </div>
