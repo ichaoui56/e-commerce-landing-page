@@ -14,6 +14,7 @@ import {
   Phone,
   Mail,
   MapPin,
+  ShoppingBagIcon,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -287,13 +288,10 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/wishlist"
+              href="/shop"
               className="relative flex items-center hover:text-cyan-600 transition-colors flex-shrink-0"
             >
-              <Heart className="h-6 w-6" />
-              <span className="absolute -top-2 -right-2 bg-cyan-600 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                0
-              </span>
+              <ShoppingBagIcon className="h-6 w-6" />
             </Link>
           </div>
 

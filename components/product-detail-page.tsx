@@ -63,7 +63,7 @@ export default function ProductDetailPageSimple({ product }: ProductDetailPageSi
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 md:mt-0 mt-20">
       {/* Breadcrumb */}
       <div className="bg-white border-b shadow-sm">
         <div className="container mx-auto px-4 py-2">

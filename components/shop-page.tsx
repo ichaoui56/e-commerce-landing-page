@@ -158,7 +158,7 @@ export default function ShopPage() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen md:mt-0 mt-20">
       {/* Page Header */}
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-4 sm:py-6 lg:py-8">
