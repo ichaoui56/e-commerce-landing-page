@@ -1,6 +1,7 @@
 export interface ProductWithDetails {
   id: string
   name: string
+  shortDescription?: string // Added short description field
   description: string | null
   price: number
   images: string[]

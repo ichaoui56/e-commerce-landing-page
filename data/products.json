@@ -1,90 +1,202 @@
-[
-  {
-    "id": "prod-1",
-    "name": "Elegant Summer Dress",
-    "base_price": 89.99,
-    "discount_percentage": 15,
-    "description": "A beautiful flowing summer dress perfect for any occasion. Made with premium cotton blend for comfort and style. Features a flattering silhouette that works for both casual and formal events.",
-    "is_featured": true,
-    "created_at": "2024-01-15T10:00:00Z",
-    "category_id": "cat-4",
-    "ref_code": "ESD-001"
-  },
-  {
-    "id": "prod-2",
-    "name": "Classic White Shirt",
-    "base_price": 49.99,
-    "discount_percentage": 0,
-    "description": "Timeless white shirt that goes with everything. Professional and casual wear. Made from high-quality cotton with a comfortable fit.",
-    "is_featured": false,
-    "created_at": "2024-01-16T10:00:00Z",
-    "category_id": "cat-5",
-    "ref_code": "CWS-002"
-  },
-  {
-    "id": "prod-3",
-    "name": "Denim Jeans",
-    "base_price": 79.99,
-    "discount_percentage": 20,
-    "description": "Premium denim jeans with perfect fit and comfort. Available in multiple washes. Classic 5-pocket design with modern styling.",
-    "is_featured": true,
-    "created_at": "2024-01-17T10:00:00Z",
-    "category_id": "cat-6",
-    "ref_code": "DJ-003"
-  },
-  {
-    "id": "prod-4",
-    "name": "Casual T-Shirt",
-    "base_price": 24.99,
-    "discount_percentage": 10,
-    "description": "Comfortable cotton t-shirt for everyday wear. Soft and breathable fabric. Perfect for layering or wearing alone.",
-    "is_featured": false,
-    "created_at": "2024-01-18T10:00:00Z",
-    "category_id": "cat-5",
-    "ref_code": "CT-004"
-  },
-  {
-    "id": "prod-5",
-    "name": "Men's Polo Shirt",
-    "base_price": 39.99,
-    "discount_percentage": 0,
-    "description": "Classic polo shirt for men. Perfect for casual and semi-formal occasions. Made with premium pique cotton.",
-    "is_featured": true,
-    "created_at": "2024-01-19T10:00:00Z",
-    "category_id": "cat-7",
-    "ref_code": "MPS-005"
-  },
-  {
-    "id": "prod-6",
-    "name": "Chino Pants",
-    "base_price": 59.99,
-    "discount_percentage": 25,
-    "description": "Versatile chino pants that work for both casual and business casual settings. Comfortable fit with modern styling.",
-    "is_featured": false,
-    "created_at": "2024-01-20T10:00:00Z",
-    "category_id": "cat-8",
-    "ref_code": "CP-006"
-  },
-  {
-    "id": "prod-7",
-    "name": "Silk Scarf",
-    "base_price": 34.99,
-    "discount_percentage": 0,
-    "description": "Luxurious silk scarf with elegant patterns. Perfect accessory for any outfit. Adds sophistication to any look.",
-    "is_featured": true,
-    "created_at": "2024-01-21T10:00:00Z",
-    "category_id": "cat-9",
-    "ref_code": "SS-007"
-  },
-  {
-    "id": "prod-8",
-    "name": "Floral Blouse",
-    "base_price": 44.99,
-    "discount_percentage": 15,
-    "description": "Beautiful floral blouse with delicate patterns. Perfect for spring and summer. Lightweight and comfortable fabric.",
-    "is_featured": false,
-    "created_at": "2024-01-22T10:00:00Z",
-    "category_id": "cat-5",
-    "ref_code": "FB-008"
-  }
-]
+{
+  "products": [
+    {
+      "id": "hs-shampoing-ds",
+      "name": "H&S Shampoing DS",
+      "shortDescription": "Soin lavant anti-pelliculaire pour cuir chevelu sensible",
+      "description": "H&S Shampoing DS est un soin lavant qui réduit la prolifération des pellicules, régule les démangeaisons et calme les irritations du cuir chevelu. Pellicules modérées ou sévères, Dermite Séborrhéique. Sans parfum.",
+      "price": 89.99,
+      "images": ["/images/products/shampoing-ds-1.png", "/images/products/shampoing-ds-2.png"],
+      "category": "Soins Capillaires",
+      "properties": [
+        "Anti Fongique, Antibactérien",
+        "Séborégulateur",
+        "Apaisant",
+        "États squameux",
+        "Pellicules sévères",
+        "Flacon 200ml"
+      ],
+      "inStock": true,
+      "top_price": true,
+      "createdAt": "2024-01-15T10:00:00.000Z",
+      "updatedAt": "2024-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "hs-creme-reparatrice",
+      "name": "H&S Crème Réparatrice",
+      "shortDescription": "Accélère la cicatrisation et régénère la peau",
+      "description": "Soin qui favorise, améliore et accélère le processus de cicatrisation de la peau chez l'enfant et chez l'adulte. Visage et Corps.",
+      "price": 65.0,
+      "images": ["/images/products/creme-reparatrice-1.png", "/images/products/creme-reparatrice-2.png"],
+      "category": "Réparation",
+      "properties": [
+        "Nourrit et aide à régénérer la peau",
+        "Favorise la réparation tissulaire",
+        "Améliore l'aspect de la cicatrice",
+        "Tube 30ml"
+      ],
+      "inStock": true,
+      "top_price": false,
+      "createdAt": "2024-01-15T10:00:00.000Z",
+      "updatedAt": "2024-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "hs-spray-antiseptique",
+      "name": "H&S Spray Anti Septique",
+      "shortDescription": "Solution antiseptique douce pour toute la famille",
+      "description": "Solution aqueuse anti septique et anti fongique pour Enfant et adulte. Ne tache pas et ne pique pas.",
+      "price": 55.0,
+      "images": [
+        "/images/products/spray-antiseptique-1.png",
+        "/images/products/spray-antiseptique-2.png",
+        "/images/products/spray-antiseptique-3.png"
+      ],
+      "category": "Antiseptiques",
+      "properties": ["Anti bactérien", "Ne tache pas", "Ne pique pas", "Flacon 125ml"],
+      "inStock": true,
+      "top_price": false,
+      "createdAt": "2024-01-15T10:00:00.000Z",
+      "updatedAt": "2024-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "hs-gel-nettoyant",
+      "name": "H&S Gel Nettoyant 3 en 1",
+      "shortDescription": "Nettoie, démaquille et tonifie en un seul geste",
+      "description": "Cette eau démaquillante micellaire 3 en 1 nettoie, démaquille et tonifie la peau en un seul geste. Visage - Yeux - Lèvres. Toutes Peaux.",
+      "price": 75.0,
+      "images": ["/images/products/gel-nettoyant-1.png", "/images/products/gel-nettoyant-2.png"],
+      "category": "Nettoyants",
+      "properties": [
+        "Nettoie et démaquille en douceur",
+        "Tonifie et rafraîchit la peau",
+        "Apaisante, procure une sensation de confort",
+        "Flacon 250ml"
+      ],
+      "inStock": true,
+      "top_price": true,
+      "createdAt": "2024-01-16T10:00:00.000Z",
+      "updatedAt": "2024-01-16T10:00:00.000Z"
+    },
+    {
+      "id": "hs-gel-purifiant",
+      "name": "H&S Gel Purifiant",
+      "shortDescription": "Purifie et équilibre les peaux mixtes à grasses",
+      "description": "Gel nettoyant purifiant qui élimine les impuretés et l'excès de sébum tout en respectant l'équilibre naturel de la peau. Idéal pour les peaux mixtes à grasses.",
+      "price": 68.0,
+      "images": ["/images/products/gel-purifiant-1.png", "/images/products/gel-purifiant-2.png"],
+      "category": "Nettoyants",
+      "properties": [
+        "Purifie en profondeur",
+        "Régule l'excès de sébum",
+        "Resserre les pores",
+        "Texture gel fraîche",
+        "Flacon 200ml"
+      ],
+      "inStock": true,
+      "top_price": false,
+      "createdAt": "2024-01-16T10:00:00.000Z",
+      "updatedAt": "2024-01-16T10:00:00.000Z"
+    },
+    {
+      "id": "hs-creme-depigmentante",
+      "name": "H&S Crème Dépigmentante",
+      "shortDescription": "Unifie le teint et réduit les taches pigmentaires",
+      "description": "Crème dépigmentante qui aide à réduire l'apparence des taches brunes et unifie le teint. Formule enrichie en actifs éclaircissants pour une peau lumineuse et homogène.",
+      "price": 135.0,
+      "images": ["/images/products/creme-depigmentanate-1.png", "/images/products/creme-depigmentanate-2.png"],
+      "category": "Éclaircissants",
+      "properties": [
+        "Réduit les taches pigmentaires",
+        "Unifie le teint",
+        "Illumine la peau",
+        "Action progressive",
+        "Tube 50ml"
+      ],
+      "inStock": true,
+      "top_price": true,
+      "createdAt": "2024-01-17T10:00:00.000Z",
+      "updatedAt": "2024-01-17T10:00:00.000Z"
+    },
+    {
+      "id": "hs-creme-emolliente",
+      "name": "H&S Crème Émolliente",
+      "shortDescription": "Apaise et protège les peaux très sèches",
+      "description": "Crème émolliente ultra-nourrissante pour les peaux très sèches et sensibles. Apaise les irritations et restaure la barrière cutanée pour un confort longue durée.",
+      "price": 78.0,
+      "images": ["/images/products/creme-emolliente-1.png", "/images/products/creme-emolliente-3.png"],
+      "category": "Hydratants",
+      "properties": [
+        "Nourrit intensément",
+        "Apaise les irritations",
+        "Restaure la barrière cutanée",
+        "Texture riche et onctueuse",
+        "Tube 100ml"
+      ],
+      "inStock": true,
+      "top_price": false,
+      "createdAt": "2024-01-17T10:00:00.000Z",
+      "updatedAt": "2024-01-17T10:00:00.000Z"
+    },
+    {
+      "id": "hs-creme-hydratante",
+      "name": "H&S Crème Hydratante",
+      "shortDescription": "Hydratation intense 24h pour tous types de peaux",
+      "description": "Crème hydratante quotidienne qui procure une hydratation intense et durable. Sa texture légère pénètre rapidement sans laisser de film gras. Convient à tous les types de peaux.",
+      "price": 85.0,
+      "images": ["/images/products/creme-hydratante-1.png", "/images/products/creme-hydratante-2.png"],
+      "category": "Hydratants",
+      "properties": [
+        "Hydratation 24h",
+        "Texture légère non grasse",
+        "Pénétration rapide",
+        "Tous types de peaux",
+        "Tube 50ml"
+      ],
+      "inStock": true,
+      "top_price": false,
+      "createdAt": "2024-01-18T10:00:00.000Z",
+      "updatedAt": "2024-01-18T10:00:00.000Z"
+    },
+    {
+      "id": "hs-creme-regulatrice",
+      "name": "H&S Crème Régulatrice Anti-rides",
+      "shortDescription": "Combat les signes de l'âge et raffermit la peau",
+      "description": "Crème anti-âge qui repulpe la peau, lisse les rides et ridules et améliore la fermeté. Formule enrichie en actifs anti-âge pour une peau visiblement plus jeune.",
+      "price": 120.0,
+      "images": ["/images/products/creme-regulatrice-1.png", "/images/products/creme-regulatrice-2.png"],
+      "category": "Anti-âge",
+      "properties": [
+        "Réduit les rides et ridules",
+        "Raffermit la peau",
+        "Effet repulpant",
+        "Action anti-âge globale",
+        "Tube 50ml"
+      ],
+      "inStock": true,
+      "top_price": true,
+      "createdAt": "2024-01-18T10:00:00.000Z",
+      "updatedAt": "2024-01-18T10:00:00.000Z"
+    },
+    {
+      "id": "hs-ecran-solaire",
+      "name": "H&S Écran Solaire SPF 50+",
+      "shortDescription": "Protection solaire très haute pour toute la famille",
+      "description": "Crème solaire haute protection SPF 50+ qui protège efficacement contre les UVA et UVB. Texture légère et résistante à l'eau. Convient aux peaux sensibles et à toute la famille.",
+      "price": 95.0,
+      "images": ["/images/products/sun-screen-1.png", "/images/products/sun-screen-2.png", "/images/products/sun-screen-3.png"],
+      "category": "Protection Solaire",
+      "properties": [
+        "SPF 50+ très haute protection",
+        "Protection UVA/UVB",
+        "Résistant à l'eau",
+        "Texture légère non grasse",
+        "Peaux sensibles",
+        "Tube 50ml"
+      ],
+      "inStock": true,
+      "top_price": false,
+      "createdAt": "2024-01-19T10:00:00.000Z",
+      "updatedAt": "2024-01-19T10:00:00.000Z"
+    }
+  ]
+}

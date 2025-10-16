@@ -7,80 +7,20 @@ import ProductCard from "./product-card"
 import { useState, useEffect, useRef } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
+import productsData from "@/data/products.json"
 
 interface NewArrivalsProps {
-  featuredProducts: ProductWithDetails[]
-  wishlistProductIds: string[]
+  featuredProducts?: ProductWithDetails[]
+  wishlistProductIds?: string[]
 }
 
-const mockProducts: ProductWithDetails[] = [
-  {
-    id: "1",
-    name: "H&S Shampoing DS",
-    description: "Soin capillaire qui réduit la prolifération des pellicules, régule les démangeaisons et calme les irritations du cuir chevelu. Pour pellicules modérées ou sévères. Dermite Séborrhéique.",
-    price: 24.99,
-    images: [
-      "/images/products/shampoing-ds-2.png",
-      "/images/products/shampoing-ds-1.png"
-    ],
-    category: "Soins Cheveux",
-    properties: ["Anti Fongique, Antibactérien", "Séborégulateur", "Apaisant"],
-    inStock: true,
-    top_price: true,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  },
-  {
-    id: "2",
-    name: "H&S Crème réparatrice",
-    description: "Soin qui favorise, améliore et accélère le processus de cicatrisation de la peau chez l'enfant et chez l'adulte. Pour le visage et le corps.",
-    price: 29.99,
-    images: [
-      "/images/products/creme-reparatrice-1.png",
-      "/images/products/creme-reparatrice-2.png"
-    ],
-    category: "Soins Corps",
-    properties: ["Nourrit et aide à régénérer la peau", "Favorise la réparation tissulaire", "Améliore l'aspect de la cicatrice"],
-    inStock: true,
-    top_price: true,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  },
-  {
-    id: "3",
-    name: "H&S Spray Anti Septique",
-    description: "Solution aqueuse antiseptique et anti fongique pour Enfant et adulte.",
-    price: 19.99,
-    images: [
-      "/images/products/spray-antiseptique-1.png",
-      "/images/products/spray-antiseptique-2.png"
-    ],
-    category: "Premiers Soins",
-    properties: ["Anti bactérien", "Ne tache pas", "Ne pique pas"],
-    inStock: true,
-    top_price: true,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  },
-  {
-    id: "4",
-    name: "H&S Gel Nettoyant Surgras",
-    description: "Gel nettoyant sans savon, conçu pour l'hygiène des peaux sèches, très sèches ou à tendance atopique. Pour Nouveaux-Nés, Enfants, Adultes.",
-    price: 22.99,
-    images: [
-      "/images/products/gel-nettoyant-2.png",
-      "/images/products/gel-nettoyant-1.png"
-    ],
-    category: "Soins Corps",
-    properties: ["Assainit et apaise la peau", "Nettoie en douceur sans dessécher", "Prévient des sensations de tiraillement"],
-    inStock: true,
-    top_price: true,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  }
-]
+const mockProducts: ProductWithDetails[] = productsData.products.slice(0, 4).map((p) => ({
+  ...p,
+  createdAt: new Date(p.createdAt),
+  updatedAt: new Date(p.updatedAt),
+}))
 
-const mockWishlistProductIds: string[] = ["2"]
+const mockWishlistProductIds: string[] = []
 
 export default function NewArrivals({ featuredProducts, wishlistProductIds }: NewArrivalsProps) {
   const [currentIndex, setCurrentIndex] = useState(0)

@@ -1,34 +1,52 @@
-
-import ProductDetailPage from "@/components/product-detail-page"
+import ProductDetailPageSimple from "@/components/product-detail-page"
 import { notFound } from "next/navigation"
+import productsData from "@/data/products.json"
 
 interface ProductPageProps {
-    params: Promise<{ id: string }>
+  params: Promise<{ id: string }>
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
+  const { id } = await params
 
+  const product = productsData.products.find((p) => p.id === id)
 
+  if (!product) {
+    notFound()
+  }
 
-    return <ProductDetailPage />
+  const productWithDates = {
+    ...product,
+    createdAt: new Date(product.createdAt),
+    updatedAt: new Date(product.updatedAt),
+  }
+
+  return <ProductDetailPageSimple product={productWithDates} />
 }
 
 export async function generateMetadata({ params }: ProductPageProps) {
-    const product = await getProductById((await params).id)
+  const { id } = await params
+  const product = productsData.products.find((p) => p.id === id)
 
-    if (!product) {
-        return {
-            title: 'Produit non trouvé',
-        }
-    }
-
+  if (!product) {
     return {
-        title: `${product.name} - Votre Boutique`,
-        description: product.description || `Achetez ${product.name} à des prix avantageux`,
-        openGraph: {
-            title: product.name,
-            description: product.description || `Achetez ${product.name} à des prix avantageux`,
-            images: product.images.length > 0 ? [product.images[0].image_url] : [],
-        },
+      title: "Produit non trouvé",
     }
+  }
+
+  return {
+    title: `${product.name} - Health & Science Line`,
+    description: product.description || `Achetez ${product.name} à des prix avantageux`,
+    openGraph: {
+      title: product.name,
+      description: product.description || `Achetez ${product.name} à des prix avantageux`,
+      images: product.images.length > 0 ? [product.images[0]] : [],
+    },
+  }
+}
+
+export async function generateStaticParams() {
+  return productsData.products.map((product: any) => ({
+    id: product.id,
+  }))
 }
