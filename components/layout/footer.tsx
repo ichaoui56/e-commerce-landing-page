@@ -189,10 +189,10 @@ export default function Footer() {
                     <div className="flex items-center gap-3">
                       <Mail className="h-5 w-5 text-cyan-600 flex-shrink-0" />
                       <a
-                        href="mailto:Hs.line@gmail.com"
+                        href="mailto:Giftpara25@gmail.ma"
                         className="text-gray-600 hover:text-cyan-600 transition-colors text-sm md:text-base"
                       >
-                        Hs.line@gmail.com
+                        Giftpara25@gmail.ma
                       </a>
                     </div>
                   </div>
@@ -204,17 +204,17 @@ export default function Footer() {
                         {
                           Icon: Facebook,
                           color: "hover:bg-[#3b5998]",
-                          href: "https://www.facebook.com/share/1FAYWxiPkj/?mibextid=wwXIfr",
+                          href: "https://www.facebook.com/",
                         },
                         {
                           Icon: Instagram,
                           color: "hover:bg-[#e4405f]",
-                          href: "https://www.instagram.com/shahine_pyjama_maroc?utm_source=ig_web_button_share_sheet&igsh=MTF2aGo5NTEydWtvOQ==",
+                          href: "https://www.instagram.com/giftpara25/",
                         },
                         {
                           Icon: TikTok,
                           color: "hover:bg-[#010101]",
-                          href: "https://www.tiktok.com/@shahine_pyjama_maroc?_t=ZS-8ysDY32Jpw7&_r=1",
+                          href: "https://www.tiktok.com/@giftpara25",
                         },
                       ].map(({ Icon, color, href }, index) => (
                         <Link

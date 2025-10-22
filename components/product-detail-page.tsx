@@ -47,6 +47,11 @@ export default function ProductDetailPageSimple({ product }: ProductDetailPageSi
       description: `${quantity} x ${product.name} ajouté au panier`,
     })
   }
+    const TikTok = (props: React.SVGProps<SVGSVGElement>) => (
+      <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path d="M31.5 2c1.3 2.6 3.5 4.7 6.1 5.8 1.2.5 2.5.8 3.9.9V15c-2.6 0-5.2-.7-7.5-2v14.4c0 4.5-1.8 8.7-4.9 11.8-3.1 3.1-7.3 4.9-11.8 4.9s-8.7-1.8-11.8-4.9c-3.1-3.1-4.9-7.3-4.9-11.8s1.8-8.7 4.9-11.8c3.1-3.1 7.3-4.9 11.8-4.9.6 0 1.2 0 1.8.1v7.6c-.6-.2-1.2-.3-1.8-.3-4.3 0-7.8 3.5-7.8 7.8s3.5 7.8 7.8 7.8 7.8-3.5 7.8-7.8V2h6.6z" />
+      </svg>
+    )
 
   const handleWishlistToggle = () => {
     setIsLiked(!isLiked)
@@ -226,12 +231,12 @@ export default function ProductDetailPageSimple({ product }: ProductDetailPageSi
             </div>
 
             {/* Quantity and Add to Cart */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+            <div className="flex flex-row items-stretch sm:items-center gap-3 pt-1">
               {/* Quantity Selector */}
               <div className="flex items-center border-2 border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="p-2 hover:text-white hover:bg-[#1e3a5f] transition-all"
+                  className="p-2 hover:text-white hover:bg-gradient-to-r from-cyan-600 to-cyan-700 transition-all p-3"
                   aria-label="Diminuer la quantité"
                 >
                   <Minus className="h-4 w-4" />
@@ -239,7 +244,7 @@ export default function ProductDetailPageSimple({ product }: ProductDetailPageSi
                 <span className="px-6 py-2 min-w-[80px] text-center font-semibold text-gray-900">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="p-2 hover:bg-[#1e3a5f] hover:text-white transition-all"
+                  className="p-2 hover:bg-gradient-to-r from-cyan-600 to-cyan-700 hover:text-white transition-all p-3"
                   aria-label="Augmenter la quantité"
                 >
                   <Plus className="h-4 w-4" />
@@ -250,7 +255,7 @@ export default function ProductDetailPageSimple({ product }: ProductDetailPageSi
               <Button
                 onClick={handleAddToCart}
                 disabled={!product.inStock}
-                className="flex-1 bg-[#1e3a5f] hover:bg-[#152d47] text-white py-5 px-6 rounded-lg font-semibold text-sm tracking-wide transition-all shadow-md hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="flex-1 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:bg-[#152d47] text-white py-5 px-6 rounded-lg font-semibold text-sm tracking-wide transition-all shadow-md hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 AJOUTER AU PANIER
               </Button>
@@ -285,18 +290,18 @@ export default function ProductDetailPageSimple({ product }: ProductDetailPageSi
                   >
                     <Facebook className="h-4 w-4" />
                   </button>
-                  <button
+                  <a href="https://tiktok.com/@giftpara25" target="_blank"
                     className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-700 hover:from-[#1da1f2] hover:to-[#0c85d0] hover:text-white transition-all hover:scale-110 shadow-sm"
-                    aria-label="Partager sur Twitter"
+                    aria-label="Partager sur TikTok"
                   >
-                    <Twitter className="h-4 w-4" />
-                  </button>
-                  <button
+                    <TikTok className="h-4 w-4" />
+                  </a>
+                  <a href="https://www.instagram.com/giftpara25/" target="_blank"
                     className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-700 hover:from-[#e4405f] hover:to-[#c13584] hover:text-white transition-all hover:scale-110 shadow-sm"
                     aria-label="Partager sur Instagram"
                   >
                     <Instagram className="h-4 w-4" />
-                  </button>
+                  </a>
                   <button
                     className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-700 hover:from-gray-800 hover:to-gray-900 hover:text-white transition-all hover:scale-110 shadow-sm"
                     aria-label="Partager"

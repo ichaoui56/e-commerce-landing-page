@@ -204,7 +204,7 @@ export default function Navbar() {
             <div className="flex items-center gap-6 text-xs">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-cyan-400 flex-shrink-0" />
-                <span className="whitespace-nowrap">Hs.line@gmail.com</span>
+                <span className="whitespace-nowrap">Giftpara25@gmail.ma</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-cyan-400 flex-shrink-0" />
@@ -225,7 +225,7 @@ export default function Navbar() {
                 <Facebook className="h-4 w-4" />
               </Link>
               <Link
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/giftpara25/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-gray-800 hover:bg-cyan-600 flex items-center justify-center transition-colors duration-300"
@@ -339,9 +339,9 @@ export default function Navbar() {
                   </Link>
 
                   <Link
-                    href="/shop"
+                    href="/conseils"
                     className={`flex items-center gap-1 py-6 border-b-2 font-semibold transition-colors whitespace-nowrap text-sm xl:text-base ${
-                      isActiveLink("/shop")
+                      isActiveLink("/conseils")
                         ? "border-cyan-600 text-cyan-600"
                         : "border-transparent hover:border-cyan-600 hover:text-cyan-600"
                     }`}
@@ -480,7 +480,7 @@ export default function Navbar() {
                     <p className="text-sm font-semibold text-gray-800">Contactez-nous</p>
                     <div className="flex items-center gap-2 text-xs text-gray-600">
                       <Mail className="h-4 w-4 text-cyan-600 flex-shrink-0" />
-                      <span>Hs.line@gmail.com</span>
+                      <span>Giftpara25@gmail.ma</span>
                     </div>
                     <div className="flex items-center gap-2 text-xs text-gray-600">
                       <Phone className="h-4 w-4 text-cyan-600 flex-shrink-0" />
@@ -512,7 +512,7 @@ export default function Navbar() {
                         <Twitter className="h-4 w-4" />
                       </Link>
                       <Link
-                        href="https://www.instagram.com"
+                        href="https://www.instagram.com/giftpara25/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-[#e4405f] hover:text-white hover:border-[#e4405f] transition-all duration-300 transform hover:scale-110"
@@ -520,7 +520,7 @@ export default function Navbar() {
                         <Instagram className="h-4 w-4" />
                       </Link>
                       <Link
-                        href="https://www.tiktok.com"
+                        href="https://www.tiktok.com/@giftpara25"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-[#010101] hover:text-white hover:border-[#010101] transition-all duration-300 transform hover:scale-110"
@@ -583,9 +583,9 @@ export default function Navbar() {
                 </Link>
 
                 <Link
-                  href="/contact"
+                  href="/conseils"
                   className={`flex items-center gap-1 py-6 border-b-2 font-semibold transition-colors whitespace-nowrap text-sm xl:text-base ${
-                    isActiveLink("/contact")
+                    isActiveLink("/conseils")
                       ? "border-cyan-600 text-cyan-600"
                       : "border-transparent hover:border-cyan-600 hover:text-cyan-600"
                   }`}

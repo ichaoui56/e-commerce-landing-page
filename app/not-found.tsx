@@ -1,6 +1,5 @@
 "use client"
 
-
 import React, { useState, useEffect } from 'react';
 import { 
   Search, 
@@ -13,7 +12,6 @@ import {
   MapPin,
   ChevronRight
 } from 'lucide-react';
-
 
 export default function LocalizedNotFound() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -63,7 +61,7 @@ export default function LocalizedNotFound() {
       <div className="absolute inset-0 overflow-hidden">
         {/* Main gradient orbs */}
         <div 
-          className="absolute w-96 h-96 bg-gradient-to-r from-[#e94491]/20 to-[#f472b6]/15 rounded-full blur-3xl transition-transform duration-1000 ease-out"
+          className="absolute w-96 h-96 bg-gradient-to-r from-cyan-600/20 to-cyan-700/15 rounded-full blur-3xl transition-transform duration-1000 ease-out"
           style={{
             transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
             left: '10%',
@@ -83,7 +81,7 @@ export default function LocalizedNotFound() {
         {floatingElements.map((element) => (
           <div
             key={element.id}
-            className="absolute w-2 h-2 bg-[#e94491]/30 rounded-full animate-pulse"
+            className="absolute w-2 h-2 bg-cyan-600/30 rounded-full animate-pulse"
             style={{
               left: `${element.x}%`,
               top: `${element.y}%`,
@@ -94,9 +92,9 @@ export default function LocalizedNotFound() {
         ))}
 
         {/* Geometric shapes */}
-        <div className="absolute top-20 left-20 w-4 h-4 border-2 border-[#e94491]/40 rotate-45 animate-spin" style={{ animationDuration: '20s' }} />
-        <div className="absolute bottom-32 right-32 w-6 h-6 border-2 border-[#f472b6]/40 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-10 w-3 h-3 bg-[#e94491]/50 transform rotate-45 animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-20 left-20 w-4 h-4 border-2 border-cyan-600/40 rotate-45 animate-spin" style={{ animationDuration: '20s' }} />
+        <div className="absolute bottom-32 right-32 w-6 h-6 border-2 border-cyan-700/40 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-10 w-3 h-3 bg-cyan-600/50 transform rotate-45 animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
       {/* Main Content */}
@@ -104,17 +102,17 @@ export default function LocalizedNotFound() {
         <div className="text-center max-w-4xl mx-auto">
           {/* Animated 404 Number */}
           <div className="relative mb-8">
-            <div className="text-9xl md:text-[12rem] lg:text-[14rem] font-light text-transparent bg-gradient-to-r from-[#e94491] via-[#f472b6] to-[#e94491] bg-clip-text bg-300% animate-pulse">
+            <div className="text-9xl md:text-[12rem] lg:text-[14rem] font-light text-transparent bg-gradient-to-r from-cyan-600 via-cyan-700 to-cyan-600 bg-clip-text bg-300% animate-pulse">
               404
             </div>
-            <div className="absolute inset-0 text-9xl md:text-[12rem] lg:text-[14rem] font-light text-[#e94491]/10 blur-sm transform scale-110">
+            <div className="absolute inset-0 text-9xl md:text-[12rem] lg:text-[14rem] font-light text-cyan-600/10 blur-sm transform scale-110">
               404
             </div>
             
             {/* Decorative elements around 404 */}
-            <div className="absolute -top-8 -left-8 w-16 h-16 border-4 border-[#e94491]/30 rounded-full animate-spin" style={{ animationDuration: '15s' }} />
-            <div className="absolute -bottom-8 -right-8 w-12 h-12 bg-gradient-to-r from-[#e94491]/20 to-[#f472b6]/20 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }} />
-            <div className="absolute top-1/2 -right-16 w-8 h-8 border-2 border-[#f472b6]/40 transform rotate-45 animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute -top-8 -left-8 w-16 h-16 border-4 border-cyan-600/30 rounded-full animate-spin" style={{ animationDuration: '15s' }} />
+            <div className="absolute -bottom-8 -right-8 w-12 h-12 bg-gradient-to-r from-cyan-600/20 to-cyan-700/20 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }} />
+            <div className="absolute top-1/2 -right-16 w-8 h-8 border-2 border-cyan-700/40 transform rotate-45 animate-pulse" style={{ animationDelay: '1s' }} />
           </div>
 
           {/* Error Message */}
@@ -125,7 +123,7 @@ export default function LocalizedNotFound() {
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Il semble que vous ayez pris un mauvais virage. La page que vous recherchez n'existe pas ou a été déplacée.
             </p>
-            <div className="inline-flex items-center gap-2 text-[#e94491] font-medium">
+            <div className="inline-flex items-center gap-2 text-cyan-600 font-medium">
               <Sparkles className="h-5 w-5 animate-pulse" />
               <span className="text-sm tracking-wider uppercase">Erreur : 404</span>
               <Sparkles className="h-5 w-5 animate-pulse" />
@@ -136,7 +134,7 @@ export default function LocalizedNotFound() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button 
               onClick={() => window.history.back()}
-              className="group flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#e94491] to-[#f472b6] text-white rounded-xl font-semibold tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              className="group flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-600 to-cyan-700 text-white rounded-xl font-semibold tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
             >
               <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform duration-300" />
               Retour
@@ -144,7 +142,7 @@ export default function LocalizedNotFound() {
             
             <a 
               href="/"
-              className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#e94491] border-2 border-[#e94491] rounded-xl font-semibold tracking-wider hover:bg-[#e94491] hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+              className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-cyan-600 border-2 border-cyan-600 rounded-xl font-semibold tracking-wider hover:bg-cyan-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
             >
               <Home className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
               Page d'Accueil
@@ -152,7 +150,7 @@ export default function LocalizedNotFound() {
             
             <a 
               href="/shop"
-              className="group flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-gray-700 border-2 border-gray-300 rounded-xl font-semibold tracking-wider hover:border-[#e94491] hover:text-[#e94491] transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+              className="group flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-gray-700 border-2 border-gray-300 rounded-xl font-semibold tracking-wider hover:border-cyan-600 hover:text-cyan-600 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
             >
               <ShoppingBag className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
               Acheter Maintenant
@@ -162,7 +160,7 @@ export default function LocalizedNotFound() {
           {/* Help Text */}
           <div className="bg-white/70 backdrop-blur-sm border border-gray-200 rounded-2xl p-8 max-w-2xl mx-auto shadow-lg">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-[#e94491] to-[#f472b6] rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-full flex items-center justify-center">
                 <Heart className="h-4 w-4 text-white animate-pulse" />
               </div>
               <h4 className="text-lg font-semibold text-gray-800">Besoin d'Aide ?</h4>
@@ -174,7 +172,7 @@ export default function LocalizedNotFound() {
             <div className="flex justify-center mt-6">
               <a 
                 href="/contact"
-                className="inline-flex items-center gap-2 text-[#e94491] hover:text-[#d63384] font-medium transition-colors duration-300"
+                className="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-medium transition-colors duration-300"
               >
                 Contacter le Support
                 <ChevronRight className="h-4 w-4" />
@@ -189,7 +187,7 @@ export default function LocalizedNotFound() {
               <br className="hidden md:block" />
               même si c'est dans la mauvaise direction !"
             </blockquote>
-            <div className="w-16 h-1 bg-gradient-to-r from-[#e94491] to-[#f472b6] mx-auto mt-4 rounded-full"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-cyan-600 to-cyan-700 mx-auto mt-4 rounded-full"></div>
           </div>
         </div>
       </div>
@@ -233,7 +231,7 @@ export default function LocalizedNotFound() {
           top: mousePosition.y - 8,
         }}
       >
-        <div className="w-full h-full bg-[#e94491]/50 rounded-full animate-ping"></div>
+        <div className="w-full h-full bg-cyan-600/50 rounded-full animate-ping"></div>
       </div>
     </div>
   );
