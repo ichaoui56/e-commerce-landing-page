@@ -136,7 +136,7 @@ export default function Footer() {
                   <div className="flex items-center gap-3">
                     <div className="w-4 h-4 flex-shrink-0"></div>
                     <span className="text-xl font-semibold text-cyan-600 hover:text-cyan-700 transition-colors cursor-pointer">
-                      05 29 43 82 60
+                      07 02 07 07 83
                     </span>
                   </div>
                 </div>
@@ -240,7 +240,7 @@ export default function Footer() {
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
               <div className="flex flex-col sm:flex-row items-center gap-4 text-center lg:text-left">
-                <p className="text-gray-500 text-sm">© 2025 H&S Store. Tous droits réservés.</p>
+                <p className="text-gray-500 text-sm">© 2025 GiftPara Store. Tous droits réservés.</p>
               </div>
 
               <div className="flex flex-col sm:flex-row items-center gap-4">

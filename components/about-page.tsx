@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { StatsSection } from "@/components/stats-section"
 import {
   Heart,
   Users,
@@ -14,7 +15,6 @@ import {
   Eye,
   TrendingUp,
   Droplet,
-  Star,
   CheckCircle,
   ArrowRight,
 } from "lucide-react"
@@ -53,13 +53,6 @@ const scaleIn = {
 }
 
 export default function AboutPage() {
-  const stats = [
-    { number: "20+", label: "Années d'Expertise", icon: Award },
-    { number: "100K+", label: "Clients Satisfaits", icon: Users },
-    { number: "50+", label: "Produits Innovants", icon: Droplet },
-    { number: "98%", label: "Taux de Satisfaction", icon: Star },
-  ]
-
   const values = [
     {
       icon: Heart,
@@ -149,7 +142,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a5f]/20 to-[#7a8a99]/20"></div>
         </div>
         <motion.div
-          className="container mx-auto px-4 text-center relative z-10"
+          className="container mx-auto px-4 text-center relative z-10 mt-20 lg:mt-0"
           variants={fadeInUp}
           initial="initial"
           animate="animate"
@@ -297,33 +290,7 @@ export default function AboutPage() {
         </div>
       </motion.div>
 
-      {/* Stats Section */}
-      <motion.div
-        className="bg-white py-16"
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <div className="container mx-auto px-4">
-          <motion.div className="grid grid-cols-2 lg:grid-cols-4 gap-8" variants={staggerContainer}>
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-center group"
-                variants={scaleIn}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="w-16 h-16 bg-gradient-to-r from-[#1e3a5f]/10 to-[#7a8a99]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="h-8 w-8 text-[#1e3a5f]" />
-                </div>
-                <div className="text-3xl font-light text-gray-800 mb-2">{stat.number}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.div>
+      <StatsSection />
 
       {/* Mission & Vision */}
       <motion.div

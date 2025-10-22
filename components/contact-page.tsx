@@ -118,7 +118,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Appelez-nous",
-      details: ["05 29 43 82 60"],
+      details: ["07 02 07 07 83"],
       color: "text-[#7a8a99]",
       bgColor: "bg-gray-50",
     },

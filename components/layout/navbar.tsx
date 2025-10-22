@@ -208,7 +208,7 @@ export default function Navbar() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-cyan-400 flex-shrink-0" />
-                <span className="whitespace-nowrap">05 29 43 82 60</span>
+                <span className="whitespace-nowrap">07 02 07 07 83</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-cyan-400 flex-shrink-0" />
@@ -484,7 +484,7 @@ export default function Navbar() {
                     </div>
                     <div className="flex items-center gap-2 text-xs text-gray-600">
                       <Phone className="h-4 w-4 text-cyan-600 flex-shrink-0" />
-                      <span>05 29 43 82 60</span>
+                      <span>07 02 07 07 83</span>
                     </div>
                     <div className="flex items-center gap-2 text-xs text-gray-600">
                       <MapPin className="h-4 w-4 text-cyan-600 flex-shrink-0" />

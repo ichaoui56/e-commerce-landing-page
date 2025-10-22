@@ -3,6 +3,7 @@ import Services from "@/components/services"
 import Banners from "@/components/banners"
 import NewArrivalsWrapper from "@/components/new-arrivals-wrapper"
 import ScrollAnimation from "@/components/scrool-animation"
+import { StatsSection } from "@/components/stats-section"
 
 export default function Home() {
 
@@ -23,6 +24,9 @@ export default function Home() {
 
       <ScrollAnimation delay={1} duration={0.5} once={true} className="">
         <NewArrivalsWrapper />
+      </ScrollAnimation>
+        <ScrollAnimation delay={1} duration={0.5} once={true} className="">
+        <StatsSection />
       </ScrollAnimation>
     </div>
   )
