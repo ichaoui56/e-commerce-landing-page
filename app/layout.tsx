@@ -9,10 +9,11 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Shahine - Magasin de Mode",
-  description: "Produits de mode et de style de vie haut de gamme",
-    generator: 'v0.dev'
-}
+  title: "GiftPara - Expertise en Dermo-Cosmétique",
+  description:
+    "Découvrez GiftPara, votre référence en dermo-cosmétique. Depuis 2005, nous offrons des soins innovants et efficaces pour les peaux sensibles et fragilisées. Contactez-nous au 07 02 07 07 83 ou à Giftpara25@gmail.ma.",
+};
+
 
 export default function RootLayout({
   children,
