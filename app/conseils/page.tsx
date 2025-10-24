@@ -30,7 +30,7 @@ export default function ConseillsPage() {
         {
             id: "peaux-mixtes-acneiques",
             title:
-                "Découvrez les Secrets d'une Peau Saine avec les Produits H&S pour Peaux Mixtes et Grasses à Tendance Acnéique",
+                "Découvrez les Secrets d'une Peau Saine avec les Produits GiftPara pour Peaux Mixtes et Grasses à Tendance Acnéique",
             excerpt:
                 "Trouvez les bons produits pour les peaux mixtes, grasses et à tendance acnéique. Découvrez comment le Gel Purifiant et la Crème Régulatrice peuvent transformer votre routine beauté.",
             category: "Peaux Mixtes",
@@ -46,7 +46,7 @@ export default function ConseillsPage() {
         },
         {
             id: "peaux-seches-atopiques",
-            title: "Hydratez et Protégez les Peaux Sèches et Atopiques avec H&S",
+            title: "Hydratez et Protégez les Peaux Sèches et Atopiques avec GiftPara",
             excerpt:
                 "Les peaux sèches et atopiques nécessitent une attention particulière. Découvrez le Gel Nettoyant Surgras et la Crème Emolliente pour une hydratation intensive.",
             category: "Peaux Sèches",

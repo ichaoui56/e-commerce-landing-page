@@ -30,17 +30,17 @@ const fadeInRight = {
 const articlesData: Record<string, any> = {
     "peaux-mixtes-acneiques": {
         title:
-            "Découvrez les Secrets d'une Peau Saine avec les Produits H&S pour Peaux Mixtes et Grasses à Tendance Acnéique",
+            "Découvrez les Secrets d'une Peau Saine avec les Produits GiftPara pour Peaux Mixtes et Grasses à Tendance Acnéique",
         category: "Peaux Mixtes",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/conseil%201-1A42EucC62voBuCzhxkKWWbHhzDidN.jpg",
         content: `
       <h2>Dans le monde des soins de la peau, trouver les bons produits pour les peaux mixtes, grasses et à tendance acnéique peut être un véritable défi.</h2>
       
-      <p>Heureusement, la gamme H&S propose des solutions efficaces et adaptées pour prendre soin de votre peau au quotidien. Découvrez comment le Gel Purifiant et la Crème Régulatrice peuvent transformer votre routine beauté.</p>
+      <p>Heureusement, la gamme GiftPara propose des solutions efficaces et adaptées pour prendre soin de votre peau au quotidien. Découvrez comment le Gel Purifiant et la Crème Régulatrice peuvent transformer votre routine beauté.</p>
 
-      <h3>H&S Gel Purifiant : La Pureté à l'État Brut</h3>
+      <h3>GiftPara Gel Purifiant : La Pureté à l'État Brut</h3>
       
-      <p>Le Gel Purifiant de H&S est spécialement conçu pour l'hygiène quotidienne des peaux mixtes, grasses et à tendance acnéique. Ce gel lavant offre une purification en profondeur tout en respectant l'équilibre naturel de votre peau.</p>
+      <p>Le Gel Purifiant de GiftPara est spécialement conçu pour l'hygiène quotidienne des peaux mixtes, grasses et à tendance acnéique. Ce gel lavant offre une purification en profondeur tout en respectant l'équilibre naturel de votre peau.</p>
 
       <h4>Propriétés :</h4>
       <ul>
@@ -49,7 +49,7 @@ const articlesData: Record<string, any> = {
         <li><strong>Anti-bactérien :</strong> Lutte contre les bactéries responsables des imperfections, pour une peau plus saine.</li>
       </ul>
 
-      <h3>H&S Crème Régulatrice : L'Équilibre Parfait</h3>
+      <h3>GiftPara Crème Régulatrice : L'Équilibre Parfait</h3>
       
       <p>La Crème Régulatrice est un soin quotidien qui permet de corriger efficacement les imperfections cutanées liées à l'acné et aide à prévenir leur réapparition. Cette crème légère et non comédogène est idéale pour les peaux mixtes et grasses.</p>
 
@@ -64,13 +64,13 @@ const articlesData: Record<string, any> = {
       
       <p>Pour des résultats optimaux, utilisez le Gel Purifiant matin et soir pour nettoyer votre peau en profondeur. Appliquez ensuite la Crème Régulatrice pour réguler et apaiser votre peau. Avec une utilisation régulière, vous constaterez une nette amélioration de la texture et de l'apparence de votre peau.</p>
 
-      <h3>Pourquoi Choisir H&S ?</h3>
+      <h3>Pourquoi Choisir GiftPara ?</h3>
       
-      <p>La gamme H&S est formulée avec des ingrédients actifs qui ciblent spécifiquement les besoins des peaux mixtes, grasses et à tendance acnéique. Les produits sont doux, efficaces et adaptés à une utilisation quotidienne. Ils vous aident à retrouver une peau équilibrée, nette et rayonnante.</p>
+      <p>La gamme GiftPara est formulée avec des ingrédients actifs qui ciblent spécifiquement les besoins des peaux mixtes, grasses et à tendance acnéique. Les produits sont doux, efficaces et adaptés à une utilisation quotidienne. Ils vous aident à retrouver une peau équilibrée, nette et rayonnante.</p>
 
       <h3>Conclusion</h3>
       
-      <p>Prendre soin de sa peau n'a jamais été aussi simple avec les produits H&S. Que vous cherchiez à purifier, réguler ou apaiser votre peau, le Gel Purifiant et la Crème Régulatrice sont vos alliés indispensables pour une peau saine et éclatante. Adoptez dès aujourd'hui la routine H&S et dites adieu aux imperfections !</p>
+      <p>Prendre soin de sa peau n'a jamais été aussi simple avec les produits GiftPara. Que vous cherchiez à purifier, réguler ou apaiser votre peau, le Gel Purifiant et la Crème Régulatrice sont vos alliés indispensables pour une peau saine et éclatante. Adoptez dès aujourd'hui la routine GiftPara et dites adieu aux imperfections !</p>
     `,
     },
     "soins-reparateurs": {
@@ -89,15 +89,15 @@ const articlesData: Record<string, any> = {
             },
         ],
         content: `
-      <h2>Les Solutions H&S pour une Peau Saine</h2>
+      <h2>Les Solutions GiftPara pour une Peau Saine</h2>
       
       <p>La peau est notre première barrière de protection contre les agressions extérieures. Qu'il s'agisse de cicatrices, de petites blessures ou de problèmes cutanés, il est essentiel de prendre soin de sa peau avec des produits adaptés.</p>
 
-      <p>La gamme H&S propose deux produits incontournables pour favoriser la réparation et la protection de la peau : la Crème Réparatrice et le Spray Anti-Septique. Découvrez comment ces produits peuvent vous aider à maintenir une peau saine et protégée.</p>
+      <p>La gamme GiftPara propose deux produits incontournables pour favoriser la réparation et la protection de la peau : la Crème Réparatrice et le Spray Anti-Septique. Découvrez comment ces produits peuvent vous aider à maintenir une peau saine et protégée.</p>
 
-      <h3>H&S Crème Réparatrice : La Cicatrisation en Douceur</h3>
+      <h3>GiftPara Crème Réparatrice : La Cicatrisation en Douceur</h3>
       
-      <p>La Crème Réparatrice de H&S est un soin conçu pour favoriser, améliorer et accélérer le processus de cicatrisation de la peau, que ce soit chez l'enfant ou chez l'adulte. Cette crème polyvalente peut être utilisée sur le visage et le corps, offrant une solution complète pour les peaux abîmées.</p>
+      <p>La Crème Réparatrice de GiftPara est un soin conçu pour favoriser, améliorer et accélérer le processus de cicatrisation de la peau, que ce soit chez l'enfant ou chez l'adulte. Cette crème polyvalente peut être utilisée sur le visage et le corps, offrant une solution complète pour les peaux abîmées.</p>
 
       <h4>Propriétés :</h4>
       <ul>
@@ -106,9 +106,9 @@ const articlesData: Record<string, any> = {
         <li><strong>Améliore l'aspect de la cicatrice :</strong> Réduit visiblement les marques laissées par les cicatrices, pour une peau plus lisse et uniforme.</li>
       </ul>
 
-      <h3>H&S Spray Anti-Septique : Une Protection Efficace</h3>
+      <h3>GiftPara Spray Anti-Septique : Une Protection Efficace</h3>
       
-      <p>Le Spray Anti-Septique de H&S est une solution aqueuse conçue pour désinfecter et protéger la peau contre les bactéries et les champignons. Idéal pour les petits bobos du quotidien, ce spray est adapté à toute la famille, enfants et adultes.</p>
+      <p>Le Spray Anti-Septique de GiftPara est une solution aqueuse conçue pour désinfecter et protéger la peau contre les bactéries et les champignons. Idéal pour les petits bobos du quotidien, ce spray est adapté à toute la famille, enfants et adultes.</p>
 
       <h4>Propriétés :</h4>
       <ul>
@@ -121,29 +121,29 @@ const articlesData: Record<string, any> = {
       
       <p>Pour des résultats optimaux, appliquez la Crème Réparatrice sur les zones à traiter, en massant délicatement jusqu'à absorption complète. Utilisez-la régulièrement pour favoriser la cicatrisation et améliorer l'aspect des cicatrices. Le Spray Anti-Septique peut être utilisé directement sur les petites blessures ou les zones à désinfecter, en vaporisant une à deux fois par jour selon les besoins.</p>
 
-      <h3>Pourquoi Choisir H&S ?</h3>
+      <h3>Pourquoi Choisir GiftPara ?</h3>
       
-      <p>Les produits H&S sont formulés avec des ingrédients actifs qui répondent aux besoins spécifiques de la peau. Que ce soit pour réparer, protéger ou apaiser, la gamme H&S offre des solutions efficaces et adaptées à toute la famille. Les produits sont doux, non agressifs et conçus pour une utilisation quotidienne.</p>
+      <p>Les produits GiftPara sont formulés avec des ingrédients actifs qui répondent aux besoins spécifiques de la peau. Que ce soit pour réparer, protéger ou apaiser, la gamme GiftPara offre des solutions efficaces et adaptées à toute la famille. Les produits sont doux, non agressifs et conçus pour une utilisation quotidienne.</p>
 
       <h3>Conclusion</h3>
       
-      <p>Prendre soin de sa peau et la protéger des agressions extérieures n'a jamais été aussi simple avec les produits H&S. Que vous ayez besoin de réparer une cicatrice ou de désinfecter une petite blessure, la Crème Réparatrice et le Spray Anti-Septique sont vos alliés indispensables pour une peau saine et protégée. Adoptez dès aujourd'hui la routine H&S et offrez à votre peau les soins qu'elle mérite !</p>
+      <p>Prendre soin de sa peau et la protéger des agressions extérieures n'a jamais été aussi simple avec les produits GiftPara. Que vous ayez besoin de réparer une cicatrice ou de désinfecter une petite blessure, la Crème Réparatrice et le Spray Anti-Septique sont vos alliés indispensables pour une peau saine et protégée. Adoptez dès aujourd'hui la routine GiftPara et offrez à votre peau les soins qu'elle mérite !</p>
     `,
     },
     "peaux-seches-atopiques": {
-        title: "Hydratez et Protégez les Peaux Sèches et Atopiques avec H&S",
+        title: "Hydratez et Protégez les Peaux Sèches et Atopiques avec GiftPara",
         category: "Peaux Sèches",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/conseils%203-970uEFP3Gp7xBIam7EJKyGSeOsHE90.jpg",
         content: `
-      <h2>Hydratez et Protégez les Peaux Sèches et Atopiques avec H&S</h2>
+      <h2>Hydratez et Protégez les Peaux Sèches et Atopiques avec GiftPara</h2>
       
-      <p>Les peaux sèches et atopiques nécessitent une attention particulière et des soins adaptés pour retrouver confort et équilibre. La gamme H&S propose deux produits essentiels pour répondre aux besoins spécifiques de ces peaux sensibles : le Gel Nettoyant Surgras et la Crème Emolliente.</p>
+      <p>Les peaux sèches et atopiques nécessitent une attention particulière et des soins adaptés pour retrouver confort et équilibre. La gamme GiftPara propose deux produits essentiels pour répondre aux besoins spécifiques de ces peaux sensibles : le Gel Nettoyant Surgras et la Crème Emolliente.</p>
 
       <p>Découvrez comment ces soins peuvent transformer votre routine beauté et apporter un soulagement durable à votre peau.</p>
 
-      <h3>H&S Gel Nettoyant Surgras : La Douceur au Quotidien</h3>
+      <h3>GiftPara Gel Nettoyant Surgras : La Douceur au Quotidien</h3>
       
-      <p>Le Gel Nettoyant Surgras de H&S est spécialement conçu pour l'hygiène des peaux sèches, très sèches ou à tendance atopique. Ce gel nettoyant sans savon offre une purification en douceur, sans agresser la peau.</p>
+      <p>Le Gel Nettoyant Surgras de GiftPara est spécialement conçu pour l'hygiène des peaux sèches, très sèches ou à tendance atopique. Ce gel nettoyant sans savon offre une purification en douceur, sans agresser la peau.</p>
 
       <h4>Propriétés :</h4>
       <ul>
@@ -152,9 +152,9 @@ const articlesData: Record<string, any> = {
         <li><strong>Prévient des sensations de tiraillement et d'inconfort cutané :</strong> Laisse la peau douce et confortable après chaque utilisation.</li>
       </ul>
 
-      <h3>H&S Crème Emolliente : L'Hydratation Intensive</h3>
+      <h3>GiftPara Crème Emolliente : L'Hydratation Intensive</h3>
       
-      <p>La Crème Emolliente de H&S est un soin nourrissant et émollient conçu pour les peaux sèches et à tendance atopique. Cette crème riche hydrate en profondeur et apaise les sensations d'inconfort.</p>
+      <p>La Crème Emolliente de GiftPara est un soin nourrissant et émollient conçu pour les peaux sèches et à tendance atopique. Cette crème riche hydrate en profondeur et apaise les sensations d'inconfort.</p>
 
       <h4>Propriétés :</h4>
       <ul>
@@ -167,13 +167,13 @@ const articlesData: Record<string, any> = {
       
       <p>Pour des résultats optimaux, utilisez le Gel Nettoyant Surgras matin et soir pour nettoyer votre peau en douceur. Appliquez ensuite la Crème Emolliente en massant délicatement jusqu'à absorption complète. Avec une utilisation régulière, vous constaterez une nette amélioration de l'hydratation et du confort de votre peau.</p>
 
-      <h3>Pourquoi Choisir H&S ?</h3>
+      <h3>Pourquoi Choisir GiftPara ?</h3>
       
-      <p>La gamme H&S est formulée avec des ingrédients actifs qui ciblent spécifiquement les besoins des peaux sèches et atopiques. Les produits sont doux, non irritants et adaptés à une utilisation quotidienne, même pour les peaux les plus sensibles. Ils vous aident à retrouver une peau hydratée, apaisée et confortable.</p>
+      <p>La gamme GiftPara est formulée avec des ingrédients actifs qui ciblent spécifiquement les besoins des peaux sèches et atopiques. Les produits sont doux, non irritants et adaptés à une utilisation quotidienne, même pour les peaux les plus sensibles. Ils vous aident à retrouver une peau hydratée, apaisée et confortable.</p>
 
       <h3>Conclusion</h3>
       
-      <p>Prendre soin des peaux sèches et atopiques n'a jamais été aussi simple avec les produits H&S. Que vous cherchiez à nettoyer en douceur ou à hydrater intensément, le Gel Nettoyant Surgras et la Crème Emolliente sont vos alliés indispensables pour une peau saine et confortable. Adoptez dès aujourd'hui la routine H&S et offrez à votre peau les soins qu'elle mérite !</p>
+      <p>Prendre soin des peaux sèches et atopiques n'a jamais été aussi simple avec les produits GiftPara. Que vous cherchiez à nettoyer en douceur ou à hydrater intensément, le Gel Nettoyant Surgras et la Crème Emolliente sont vos alliés indispensables pour une peau saine et confortable. Adoptez dès aujourd'hui la routine GiftPara et offrez à votre peau les soins qu'elle mérite !</p>
     `,
     },
 }

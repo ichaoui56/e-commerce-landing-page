@@ -95,7 +95,7 @@ export default function AboutPage() {
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       description:
-        "Ahmed assure que chaque produit H&S Derma répond à nos standards élevés de qualité et d'efficacité, avec une expertise en actifs botaniques.",
+        "Ahmed assure que chaque produit GiftPara répond à nos standards élevés de qualité et d'efficacité, avec une expertise en actifs botaniques.",
     },
     {
       name: "Dr. Sophie Laurent",
@@ -111,9 +111,9 @@ export default function AboutPage() {
     {
       year: "2005",
       title: "Fondation",
-      description: "H&S Pharma est créée avec la vision de révolutionner les soins dermatologiques",
+      description: "GiftPara Pharma est créée avec la vision de révolutionner les soins dermatologiques",
     },
-    { year: "2010", title: "Première Ligne", description: "Lancement de la gamme H&S Derma pour peaux sensibles" },
+    { year: "2010", title: "Première Ligne", description: "Lancement de la gamme GiftPara pour peaux sensibles" },
     {
       year: "2015",
       title: "Reconnaissance",
@@ -161,7 +161,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            À Propos de H&S Derma
+            À Propos de GiftPara Derma
           </motion.h1>
           <motion.p
             className="text-[#1e3a5f] font-normal text-lg tracking-wider"
@@ -245,9 +245,9 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              C'est là que les soins H&S Derma interviennent, offrant des formules riches en actifs puissants et des
+              C'est là que les soins GiftPara interviennent, offrant des formules riches en actifs puissants et des
               innovations de pointe pour nourrir et apaiser la peau, redonnant ainsi plaisir et bien-être à chaque
-              application. La gamme H&S a été conçue par des passionnés de dermo-cosmétique, forts de leurs années
+              application. La gamme GiftPara a été conçue par des passionnés de dermo-cosmétique, forts de leurs années
               d'expérience acquises au contact des professionnels de la peau.
             </motion.p>
             <motion.div
@@ -278,7 +278,7 @@ export default function AboutPage() {
             >
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HS_20250714_112406_0000-K6fFRrBE8E4qWTM8F6tIyWoP737CPN.png"
-                alt="H&S Derma Logo"
+                alt="GiftPara Logo"
                 fill
                 className="object-cover"
               />
@@ -404,7 +404,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Prêt(e) à Découvrir la Différence H&S Derma ?
+            Prêt(e) à Découvrir la Différence GiftPara ?
           </motion.h2>
           <motion.p
             className="text-white/90 mb-8 max-w-2xl mx-auto text-lg"

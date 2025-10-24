@@ -2,9 +2,9 @@
   "products": [
     {
       "id": "hs-shampoing-ds",
-      "name": "H&S Shampoing DS",
+      "name": "GiftPara Shampoing DS",
       "shortDescription": "Soin lavant anti-pelliculaire pour cuir chevelu sensible",
-      "description": "H&S Shampoing DS est un soin lavant qui réduit la prolifération des pellicules, régule les démangeaisons et calme les irritations du cuir chevelu. Pellicules modérées ou sévères, Dermite Séborrhéique. Sans parfum.",
+      "description": "GiftPara Shampoing DS est un soin lavant qui réduit la prolifération des pellicules, régule les démangeaisons et calme les irritations du cuir chevelu. Pellicules modérées ou sévères, Dermite Séborrhéique. Sans parfum.",
       "price": 89.99,
       "images": ["/images/products/shampoing-ds-1.png", "/images/products/shampoing-ds-2.png"],
       "category": "Soins Capillaires",
@@ -23,7 +23,7 @@
     },
     {
       "id": "hs-creme-reparatrice",
-      "name": "H&S Crème Réparatrice",
+      "name": "GiftPara Crème Réparatrice",
       "shortDescription": "Accélère la cicatrisation et régénère la peau",
       "description": "Soin qui favorise, améliore et accélère le processus de cicatrisation de la peau chez l'enfant et chez l'adulte. Visage et Corps.",
       "price": 65.0,
@@ -42,7 +42,7 @@
     },
     {
       "id": "hs-spray-antiseptique",
-      "name": "H&S Spray Anti Septique",
+      "name": "GiftPara Spray Anti Septique",
       "shortDescription": "Solution antiseptique douce pour toute la famille",
       "description": "Solution aqueuse anti septique et anti fongique pour Enfant et adulte. Ne tache pas et ne pique pas.",
       "price": 55.0,
@@ -60,7 +60,7 @@
     },
     {
       "id": "hs-gel-nettoyant",
-      "name": "H&S Gel Nettoyant 3 en 1",
+      "name": "GiftPara Gel Nettoyant 3 en 1",
       "shortDescription": "Nettoie, démaquille et tonifie en un seul geste",
       "description": "Cette eau démaquillante micellaire 3 en 1 nettoie, démaquille et tonifie la peau en un seul geste. Visage - Yeux - Lèvres. Toutes Peaux.",
       "price": 75.0,
@@ -79,7 +79,7 @@
     },
     {
       "id": "hs-gel-purifiant",
-      "name": "H&S Gel Purifiant",
+      "name": "GiftPara Gel Purifiant",
       "shortDescription": "Purifie et équilibre les peaux mixtes à grasses",
       "description": "Gel nettoyant purifiant qui élimine les impuretés et l'excès de sébum tout en respectant l'équilibre naturel de la peau. Idéal pour les peaux mixtes à grasses.",
       "price": 68.0,
@@ -99,7 +99,7 @@
     },
     {
       "id": "hs-creme-depigmentante",
-      "name": "H&S Crème Dépigmentante",
+      "name": "GiftPara Crème Dépigmentante",
       "shortDescription": "Unifie le teint et réduit les taches pigmentaires",
       "description": "Crème dépigmentante qui aide à réduire l'apparence des taches brunes et unifie le teint. Formule enrichie en actifs éclaircissants pour une peau lumineuse et homogène.",
       "price": 135.0,
@@ -119,7 +119,7 @@
     },
     {
       "id": "hs-creme-emolliente",
-      "name": "H&S Crème Émolliente",
+      "name": "GiftPara Crème Émolliente",
       "shortDescription": "Apaise et protège les peaux très sèches",
       "description": "Crème émolliente ultra-nourrissante pour les peaux très sèches et sensibles. Apaise les irritations et restaure la barrière cutanée pour un confort longue durée.",
       "price": 78.0,
@@ -139,7 +139,7 @@
     },
     {
       "id": "hs-creme-hydratante",
-      "name": "H&S Crème Hydratante",
+      "name": "GiftPara Crème Hydratante",
       "shortDescription": "Hydratation intense 24h pour tous types de peaux",
       "description": "Crème hydratante quotidienne qui procure une hydratation intense et durable. Sa texture légère pénètre rapidement sans laisser de film gras. Convient à tous les types de peaux.",
       "price": 85.0,
@@ -159,7 +159,7 @@
     },
     {
       "id": "hs-creme-regulatrice",
-      "name": "H&S Crème Régulatrice Anti-rides",
+      "name": "GiftPara Crème Régulatrice Anti-rides",
       "shortDescription": "Combat les signes de l'âge et raffermit la peau",
       "description": "Crème anti-âge qui repulpe la peau, lisse les rides et ridules et améliore la fermeté. Formule enrichie en actifs anti-âge pour une peau visiblement plus jeune.",
       "price": 120.0,
@@ -179,7 +179,7 @@
     },
     {
       "id": "hs-ecran-solaire",
-      "name": "H&S Écran Solaire SPF 50+",
+      "name": "GiftPara Écran Solaire SPF 50+",
       "shortDescription": "Protection solaire très haute pour toute la famille",
       "description": "Crème solaire haute protection SPF 50+ qui protège efficacement contre les UVA et UVB. Texture légère et résistante à l'eau. Convient aux peaux sensibles et à toute la famille.",
       "price": 95.0,

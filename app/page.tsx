@@ -31,9 +31,9 @@ export default function Home() {
         <StatsSection />
       </ScrollAnimation>
 
-      <ScrollAnimation delay={0.2} duration={0.5} once={true} className="">
+      {/* <ScrollAnimation delay={0.2} duration={0.5} once={true} className="">
         <FeaturedCategories />
-      </ScrollAnimation>
+      </ScrollAnimation> */}
 
       <ScrollAnimation delay={0.2} duration={0.5} once={true} className="">
         <TestimonialsSection />
@@ -43,9 +43,9 @@ export default function Home() {
         <WhyChooseUs />
       </ScrollAnimation>
 
-      <ScrollAnimation delay={0.2} duration={0.5} once={true} className="">
+      {/* <ScrollAnimation delay={0.2} duration={0.5} once={true} className="">
         <NewsletterCTA />
-      </ScrollAnimation>
+      </ScrollAnimation> */}
     </div>
   )
 }

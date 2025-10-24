@@ -19,18 +19,18 @@ const testimonials: Testimonial[] = [
     name: "Sarah Benali",
     role: "Cliente Fidèle",
     content:
-      "Les produits H&S Line ont transformé ma peau sensible. La crème hydratante est devenue mon indispensable quotidien. Résultats visibles en quelques semaines!",
+      "Les produits GiftPara Line ont transformé ma peau sensible. La crème hydratante est devenue mon indispensable quotidien. Résultats visibles en quelques semaines!",
     rating: 5,
-    image: "/woman-portrait-1.png",
+    image: "images/testomonials/woman-portrait-1.png",
   },
   {
     id: 2,
     name: "Amina Khalil",
     role: "Dermatologue",
     content:
-      "Je recommande H&S Line à mes patients. Des formulations dermatologiques de qualité professionnelle avec des ingrédients naturels. Excellente tolérance cutanée.",
+      "Je recommande GiftPara Line à mes patients. Des formulations dermatologiques de qualité professionnelle avec des ingrédients naturels. Excellente tolérance cutanée.",
     rating: 5,
-    image: "/woman-portrait-2.png",
+    image: "images/testomonials/woman-portrait-2.png",
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
     content:
       "La protection solaire SPF 50+ est parfaite pour toute la famille. Texture légère, pas de traces blanches. Mes enfants adorent!",
     rating: 5,
-    image: "/woman-portrait-3.png",
+    image: "images/testomonials/woman-portrait-3.png",
   },
 ]
 

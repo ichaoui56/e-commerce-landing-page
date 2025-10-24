@@ -17,9 +17,9 @@ const carouselSlides = [
   {
     desktopImage: "/images/hero/banner-2.png",
     mobileImage: "/images/hero/banner-2-mobile.jpg",
-    title: "H&S LINE SPF 50+",
+    title: "GiftPara LINE SPF 50+",
     subtitle:
-      "Protégez votre peau avec l'écran solaire H&S Line SPF 50+ : une protection extrême, une texture invisible, pour tous types de peaux",
+      "Protégez votre peau avec l'écran solaire GiftPara Line SPF 50+ : une protection extrême, une texture invisible, pour tous types de peaux",
     link: "/products/sunscreen",
   },
 ]
