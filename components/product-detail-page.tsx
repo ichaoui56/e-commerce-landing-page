@@ -9,8 +9,6 @@ import {
   ChevronRight,
   Star,
   Heart,
-  Minus,
-  Plus,
   Facebook,
   Twitter,
   Instagram,
@@ -19,6 +17,7 @@ import {
   Package,
   Shield,
   Truck,
+  MessageCircle,
 } from "lucide-react"
 import type { ProductWithDetails } from "@/lib/types"
 import { useToast } from "@/hooks/use-toast"
@@ -30,7 +29,6 @@ interface ProductDetailPageSimpleProps {
 export default function ProductDetailPageSimple({ product }: ProductDetailPageSimpleProps) {
   const { toast } = useToast()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [quantity, setQuantity] = useState(1)
   const [isLiked, setIsLiked] = useState(false)
 
   const nextImage = () => {
@@ -41,17 +39,20 @@ export default function ProductDetailPageSimple({ product }: ProductDetailPageSi
     setCurrentImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length)
   }
 
-  const handleAddToCart = () => {
-    toast({
-      title: "Ajouté au panier",
-      description: `${quantity} x ${product.name} ajouté au panier`,
-    })
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "212602393795" // Replace with your actual WhatsApp number
+    const message = `Bonjour! Je suis intéressé(e) par ce produit:\n\n*${product.name}*\n\nPrix: ${product.price.toFixed(2)} DHS\n\n${product.description || ''}\n\nMerci de me contacter pour plus d'informations!`
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+    
+    window.open(whatsappUrl, '_blank')
   }
-    const TikTok = (props: React.SVGProps<SVGSVGElement>) => (
-      <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
-        <path d="M31.5 2c1.3 2.6 3.5 4.7 6.1 5.8 1.2.5 2.5.8 3.9.9V15c-2.6 0-5.2-.7-7.5-2v14.4c0 4.5-1.8 8.7-4.9 11.8-3.1 3.1-7.3 4.9-11.8 4.9s-8.7-1.8-11.8-4.9c-3.1-3.1-4.9-7.3-4.9-11.8s1.8-8.7 4.9-11.8c3.1-3.1 7.3-4.9 11.8-4.9.6 0 1.2 0 1.8.1v7.6c-.6-.2-1.2-.3-1.8-.3-4.3 0-7.8 3.5-7.8 7.8s3.5 7.8 7.8 7.8 7.8-3.5 7.8-7.8V2h6.6z" />
-      </svg>
-    )
+
+  const TikTok = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M31.5 2c1.3 2.6 3.5 4.7 6.1 5.8 1.2.5 2.5.8 3.9.9V15c-2.6 0-5.2-.7-7.5-2v14.4c0 4.5-1.8 8.7-4.9 11.8-3.1 3.1-7.3 4.9-11.8 4.9s-8.7-1.8-11.8-4.9c-3.1-3.1-4.9-7.3-4.9-11.8s1.8-8.7 4.9-11.8c3.1-3.1 7.3-4.9 11.8-4.9.6 0 1.2 0 1.8.1v7.6c-.6-.2-1.2-.3-1.8-.3-4.3 0-7.8 3.5-7.8 7.8s3.5 7.8 7.8 7.8 7.8-3.5 7.8-7.8V2h6.6z" />
+    </svg>
+  )
 
   const handleWishlistToggle = () => {
     setIsLiked(!isLiked)
@@ -230,38 +231,17 @@ export default function ProductDetailPageSimple({ product }: ProductDetailPageSi
               </span>
             </div>
 
-            {/* Quantity and Add to Cart */}
+            {/* WhatsApp Button */}
             <div className="flex flex-row items-stretch sm:items-center gap-3 pt-1">
-              {/* Quantity Selector */}
-              <div className="flex items-center border-2 border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm">
-                <button
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="p-2 hover:text-white hover:bg-gradient-to-r from-cyan-600 to-cyan-700 transition-all p-3"
-                  aria-label="Diminuer la quantité"
-                >
-                  <Minus className="h-4 w-4" />
-                </button>
-                <span className="px-6 py-2 min-w-[80px] text-center font-semibold text-gray-900">{quantity}</span>
-                <button
-                  onClick={() => setQuantity(quantity + 1)}
-                  className="p-2 hover:bg-gradient-to-r from-cyan-600 to-cyan-700 hover:text-white transition-all p-3"
-                  aria-label="Augmenter la quantité"
-                >
-                  <Plus className="h-4 w-4" />
-                </button>
-              </div>
-
-              {/* Add to Cart Button */}
               <Button
-                onClick={handleAddToCart}
+                onClick={handleWhatsAppClick}
                 disabled={!product.inStock}
-                className="flex-1 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:bg-[#152d47] text-white py-5 px-6 rounded-lg font-semibold text-sm tracking-wide transition-all shadow-md hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-5 px-6 rounded-lg font-semibold text-sm tracking-wide transition-all shadow-md hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
               >
-                AJOUTER AU PANIER
+                <MessageCircle className="h-5 w-5" />
+                CONTACTER SUR WHATSAPP
               </Button>
             </div>
-
-           
 
             {/* Trust Badges */}
             <div className="grid grid-cols-3 gap-2 pt-2">
@@ -290,13 +270,19 @@ export default function ProductDetailPageSimple({ product }: ProductDetailPageSi
                   >
                     <Facebook className="h-4 w-4" />
                   </button>
-                  <a href="https://tiktok.com/@giftpara25" target="_blank"
+                  <a 
+                    href="https://tiktok.com/@giftpara25" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-700 hover:from-[#1da1f2] hover:to-[#0c85d0] hover:text-white transition-all hover:scale-110 shadow-sm"
                     aria-label="Partager sur TikTok"
                   >
                     <TikTok className="h-4 w-4" />
                   </a>
-                  <a href="https://www.instagram.com/giftpara25/" target="_blank"
+                  <a 
+                    href="https://www.instagram.com/giftpara25/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-700 hover:from-[#e4405f] hover:to-[#c13584] hover:text-white transition-all hover:scale-110 shadow-sm"
                     aria-label="Partager sur Instagram"
                   >

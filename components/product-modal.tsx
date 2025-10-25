@@ -3,7 +3,7 @@
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ShoppingCart, Heart, X, ChevronLeft, ChevronRight, Package, CheckCircle2 } from "lucide-react"
+import { ShoppingCart, Heart, X, ChevronLeft, ChevronRight, Package, CheckCircle2, MessageCircle } from "lucide-react"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 
@@ -27,7 +27,7 @@ interface ProductModalProps {
   onClose: () => void
   isInWishlist?: boolean
   onWishlistChange?: (productId: string, isLiked: boolean) => void
-  onAddToCart?: (productId: string) => void
+  onWhatsAppClick?: (productId: string) => void
 }
 
 export default function ProductModal({
@@ -36,7 +36,7 @@ export default function ProductModal({
   onClose,
   isInWishlist = false,
   onWishlistChange,
-  onAddToCart,
+  onWhatsAppClick,
 }: ProductModalProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isLiked, setIsLiked] = useState(isInWishlist)
@@ -57,9 +57,9 @@ export default function ProductModal({
     }
   }
 
-  const handleAddToCart = () => {
-    if (onAddToCart && product.inStock) {
-      onAddToCart(product.id)
+  const handleWhatsAppClick = () => {
+    if (onWhatsAppClick && product.inStock) {
+      onWhatsAppClick(product.id)
     }
   }
 
@@ -227,12 +227,12 @@ export default function ProductModal({
 
             <div className="mt-auto pt-4 sm:pt-6 space-y-3 border-t border-gray-200">
               <Button
-                onClick={handleAddToCart}
+                onClick={handleWhatsAppClick}
                 disabled={!product.inStock}
-                className="w-full bg-gradient-to-r from-[#0b91b3] to-[#0a7a94] hover:from-[#0a7a94] hover:to-[#096b82] text-white font-bold py-5 sm:py-6 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] text-sm sm:text-base"
+                className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-5 sm:py-6 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] text-sm sm:text-base"
               >
-                <ShoppingCart className="h-5 w-5 mr-2" />
-                {product.inStock ? "AJOUTER AU PANIER" : "PRODUIT ÉPUISÉ"}
+                <MessageCircle className="h-5 w-5 mr-2" />
+                {product.inStock ? "CONTACTER SUR WHATSAPP" : "PRODUIT ÉPUISÉ"}
               </Button>
               <Button
                 variant="outline"

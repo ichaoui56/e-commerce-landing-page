@@ -3,7 +3,7 @@
 import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ShoppingCart, Eye, Loader2, ChevronLeft, ChevronRight } from "lucide-react"
+import { ShoppingCart, Eye, Loader2, ChevronLeft, ChevronRight, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -151,9 +151,12 @@ export default function ProductCard({ product, isInWishlist = false, onWishlistC
     })
   }
 
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
+  const handleWhatsAppClick = (e?: React.MouseEvent | string) => {
+    // Handle event if it's a MouseEvent
+    if (e && typeof e !== 'string' && 'preventDefault' in e) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
 
     if (!product.inStock) {
       toast({
@@ -165,15 +168,12 @@ export default function ProductCard({ product, isInWishlist = false, onWishlistC
       return
     }
 
-    startTransition(() => {
-      setTimeout(() => {
-        toast({
-          title: "Produit ajouté",
-          description: `${product.name} a été ajouté à votre panier`,
-          duration: 3000,
-        })
-      }, 500)
-    })
+    const phoneNumber = "212602393795" // Replace with your actual WhatsApp number
+    const message = `Bonjour! Je suis intéressé(e) par ce produit:\n\n*${product.name}*\n\nPrix: ${product.price.toFixed(2)} DHS\n\n${product.description || ''}\n\nMerci de me contacter pour plus d'informations!`
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+    
+    window.open(whatsappUrl, '_blank')
   }
 
   const handleQuickView = (e: React.MouseEvent) => {
@@ -262,18 +262,14 @@ export default function ProductCard({ product, isInWishlist = false, onWishlistC
             <Button
               variant="ghost"
               size="icon"
-              onClick={handleAddToCart}
-              disabled={isPending || isOutOfStock}
+              onClick={handleWhatsAppClick}
+              disabled={isOutOfStock}
               className={`sm:hidden bg-white/90 backdrop-blur-sm hover:bg-white rounded-full h-8 w-8 transition-all duration-200 shadow-sm border border-gray-100 disabled:opacity-50 disabled:cursor-not-allowed ${
-                !isOutOfStock ? "hover:bg-[#0b91b3] hover:text-white hover:border-[#0b91b3]" : ""
+                !isOutOfStock ? "hover:bg-green-500 hover:text-white hover:border-green-500" : ""
               }`}
-              aria-label={isPending ? "Ajout en cours..." : isOutOfStock ? "Produit épuisé" : "Ajouter au panier"}
+              aria-label={isOutOfStock ? "Produit épuisé" : "Contacter sur WhatsApp"}
             >
-              <ShoppingCart
-                className={`h-4 w-4 transition-colors ${
-                  isPending ? "animate-pulse" : ""
-                } ${isOutOfStock ? "text-gray-400" : "text-gray-600"}`}
-              />
+              <MessageCircle className={`h-4 w-4 transition-colors ${isOutOfStock ? "text-gray-400" : "text-gray-600"}`} />
             </Button>
           </div>
 
@@ -283,12 +279,12 @@ export default function ProductCard({ product, isInWishlist = false, onWishlistC
             }`}
           >
             <Button
-              onClick={handleAddToCart}
-              disabled={isPending || isOutOfStock}
-              className="w-full bg-white/95 backdrop-blur-sm border border-white/50 hover:bg-[#0b91b3] hover:text-white hover:border-[#0b91b3] text-gray-700 font-medium shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 rounded-lg h-10 text-sm"
+              onClick={handleWhatsAppClick}
+              disabled={isOutOfStock}
+              className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-medium shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 rounded-lg h-10 text-sm"
             >
-              <ShoppingCart className="h-4 w-4 mr-2" />
-              {isPending ? "AJOUT..." : isOutOfStock ? "ÉPUISÉ" : "AJOUTER AU PANIER"}
+              <MessageCircle className="h-4 w-4 mr-2" />
+              {isOutOfStock ? "ÉPUISÉ" : "CONTACTER SUR WHATSAPP"}
             </Button>
           </div>
         </div>
@@ -344,12 +340,7 @@ export default function ProductCard({ product, isInWishlist = false, onWishlistC
         onClose={() => setIsModalOpen(false)}
         isInWishlist={isLiked}
         onWishlistChange={onWishlistChange}
-        onAddToCart={(productId) => {
-          handleAddToCart({
-            preventDefault: () => {},
-            stopPropagation: () => {},
-          } as React.MouseEvent)
-        }}
+        onWhatsAppClick={handleWhatsAppClick}
       />
     </>
   )

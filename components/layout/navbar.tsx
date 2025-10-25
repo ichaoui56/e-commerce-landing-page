@@ -233,7 +233,7 @@ export default function Navbar() {
                 <Instagram className="h-4 w-4" />
               </Link>
               <Link
-                href="https://www.tiktok.com"
+                href="https://www.tiktok.com/@giftpara25"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-gray-800 hover:bg-cyan-600 flex items-center justify-center transition-colors duration-300"
