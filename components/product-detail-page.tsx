@@ -40,7 +40,7 @@ export default function ProductDetailPageSimple({ product }: ProductDetailPageSi
   }
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "212602393795" // Replace with your actual WhatsApp number
+    const phoneNumber = "212702070783" // Replace with your actual WhatsApp number
     const message = `Bonjour! Je suis intéressé(e) par ce produit:\n\n*${product.name}*\n\nPrix: ${product.price.toFixed(2)} DHS\n\n${product.description || ''}\n\nMerci de me contacter pour plus d'informations!`
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
@@ -264,12 +264,15 @@ export default function ProductDetailPageSimple({ product }: ProductDetailPageSi
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                 <span className="text-xs text-gray-700 font-semibold">Partager :</span>
                 <div className="flex items-center gap-2">
-                  <button
+                  <a
+                    href="https://www.facebook.com/share/1CqjXsVodb/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-700 hover:from-[#3b5998] hover:to-[#2d4373] hover:text-white transition-all hover:scale-110 shadow-sm"
                     aria-label="Partager sur Facebook"
                   >
                     <Facebook className="h-4 w-4" />
-                  </button>
+                  </a>
                   <a 
                     href="https://tiktok.com/@giftpara25" 
                     target="_blank"

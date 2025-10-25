@@ -217,7 +217,7 @@ export default function Navbar() {
             </div>
             <div className="flex items-center gap-3">
               <Link
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/share/1CqjXsVodb/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-gray-800 hover:bg-cyan-600 flex items-center justify-center transition-colors duration-300"
@@ -239,14 +239,6 @@ export default function Navbar() {
                 className="w-8 h-8 rounded-full bg-gray-800 hover:bg-cyan-600 flex items-center justify-center transition-colors duration-300"
               >
                 <TikTok className="h-4 w-4" />
-              </Link>
-              <Link
-                href="https://www.twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-gray-800 hover:bg-cyan-600 flex items-center justify-center transition-colors duration-300"
-              >
-                <Twitter className="h-4 w-4" />
               </Link>
             </div>
           </div>
@@ -496,20 +488,12 @@ export default function Navbar() {
                     <p className="text-sm font-semibold mb-3 text-gray-800">Suivez-nous</p>
                     <div className="flex justify-center gap-3">
                       <Link
-                        href="https://www.facebook.com"
+                        href="https://www.facebook.com/share/1CqjXsVodb/?mibextid=wwXIfr"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-[#3b5998] hover:text-white hover:border-[#3b5998] transition-all duration-300 transform hover:scale-110"
                       >
                         <Facebook className="h-4 w-4" />
-                      </Link>
-                      <Link
-                        href="https://www.twitter.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-[#1da1f2] hover:text-white hover:border-[#1da1f2] transition-all duration-300 transform hover:scale-110"
-                      >
-                        <Twitter className="h-4 w-4" />
                       </Link>
                       <Link
                         href="https://www.instagram.com/giftpara25/"

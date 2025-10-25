@@ -168,7 +168,7 @@ export default function ProductCard({ product, isInWishlist = false, onWishlistC
       return
     }
 
-    const phoneNumber = "212602393795" // Replace with your actual WhatsApp number
+    const phoneNumber = "212702070783" // Replace with your actual WhatsApp number
     const message = `Bonjour! Je suis intéressé(e) par ce produit:\n\n*${product.name}*\n\nPrix: ${product.price.toFixed(2)} DHS\n\n${product.description || ''}\n\nMerci de me contacter pour plus d'informations!`
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`

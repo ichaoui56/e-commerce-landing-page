@@ -204,7 +204,7 @@ export default function Footer() {
                         {
                           Icon: Facebook,
                           color: "hover:bg-[#3b5998]",
-                          href: "https://www.facebook.com/",
+                          href: "https://www.facebook.com/share/1CqjXsVodb/?mibextid=wwXIfr",
                         },
                         {
                           Icon: Instagram,
