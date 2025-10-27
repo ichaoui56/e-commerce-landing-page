@@ -183,7 +183,7 @@ export default function Footer() {
                     <div className="flex items-start gap-3">
                       <MapPin className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                       <div className="text-gray-600 text-sm md:text-base">
-                        <p>Rue annasrine hay raha numéro 001, Casablanca</p>
+                        <p>Casablanca</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">

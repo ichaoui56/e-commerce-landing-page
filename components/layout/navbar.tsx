@@ -212,7 +212,7 @@ export default function Navbar() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-cyan-400 flex-shrink-0" />
-                <span className="whitespace-nowrap">Rue annasrine hay raha numéro 001, Casablanca</span>
+                <span className="whitespace-nowrap">Casablanca</span>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -480,7 +480,7 @@ export default function Navbar() {
                     </div>
                     <div className="flex items-center gap-2 text-xs text-gray-600">
                       <MapPin className="h-4 w-4 text-cyan-600 flex-shrink-0" />
-                      <span>Rue annasrine hay raha numéro 001, Casablanca</span>
+                      <span>Casablanca</span>
                     </div>
                   </div>
 
