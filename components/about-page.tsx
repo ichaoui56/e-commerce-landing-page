@@ -277,7 +277,7 @@ export default function AboutPage() {
               transition={{ duration: 0.3 }}
             >
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HS_20250714_112406_0000-K6fFRrBE8E4qWTM8F6tIyWoP737CPN.png"
+                src="/images/sub-hero/catalogue.jpg"
                 alt="GiftPara Logo"
                 fill
                 className="object-cover"

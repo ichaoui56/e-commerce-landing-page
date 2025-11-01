@@ -76,18 +76,7 @@ const articlesData: Record<string, any> = {
     "soins-reparateurs": {
         title: "Des Soins Réparateurs et Antiseptiques pour une Peau Saine",
         category: "Réparation",
-        image:
-            "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-22%20at%2002.14.23-nZ01ah97h9glCgtD4xHqOIRsGlbipF.png",
-        images: [
-            {
-                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-22%20at%2002.00.45-wPQugGPcBwGFPpovS9ObbdWCU3L5Qp.png",
-                label: "CREME",
-            },
-            {
-                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-22%20at%2002.14.23-nZ01ah97h9glCgtD4xHqOIRsGlbipF.png",
-                label: "SPRAY",
-            },
-        ],
+        
         content: `
       <h2>Les Solutions GiftPara pour une Peau Saine</h2>
       

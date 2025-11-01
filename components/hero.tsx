@@ -82,7 +82,7 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col gap-4 md:gap-6 pb-4 md:pb-6">
       {/* Main Hero Carousel */}
-      <div className="relative bg-gradient-to-br from-cyan-50 to-cyan-100 min-h-[50vh] w-[92%] sm:w-[96.5%] rounded-xl mx-auto md:min-h-[65vh] overflow-hidden group sm:mt-[20px] mt-[95px]">
+      <div className="relative bg-gradient-to-br from-cyan-50 to-cyan-100 min-h-[50vh] w-[92%] sm:w-[96.5%] rounded-xl mx-auto md:min-h-[65vh] overflow-hidden group sm:mt-[20px] mt-[105px]">
         {/* Carousel Slides */}
         <div className="relative h-full min-h-[50vh] md:min-h-[65vh]">
           {carouselSlides.map((slide, index) => (
@@ -100,7 +100,7 @@ export default function Hero() {
                 priority={index === 0}
               />
               <Image
-                src="images/hero/banner-2-mobile.jpg"
+                src={slide.mobileImage || "/placeholder.svg"}
                 alt={slide.title}
                 fill
                 className="block md:hidden object-cover"
@@ -115,21 +115,21 @@ export default function Hero() {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute hidden md:block left-2 md:left-4 top-1/2 -translate-y-1/2 z-30 bg-white/80 hover:bg-white text-cyan-600 p-2 md:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 shadow-lg"
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-30 bg-white/80 hover:bg-white text-cyan-600 p-2 md:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 shadow-lg"
           aria-label="Previous slide"
         >
           <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute hidden md:block right-2 md:right-4 top-1/2 -translate-y-1/2 z-30 bg-white/80 hover:bg-white text-cyan-600 p-2 md:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 shadow-lg"
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-30 bg-white/80 hover:bg-white text-cyan-600 p-2 md:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 shadow-lg"
           aria-label="Next slide"
         >
           <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
         </button>
 
         {/* Dots Indicator */}
-        <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:gap-3 hidden md:block">
+        <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:gap-3">
           {carouselSlides.map((_, index) => (
             <button
               key={index}
