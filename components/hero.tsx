@@ -37,7 +37,7 @@ const featureCards = [
     buttonText: "VOIR PLUS",
     imageUrl: "/images/sub-hero/catalogue.jpg",
     alt: "Notre catalogue de produits",
-    link: "/catalogue",
+    link: "/shop",
   },
   {
     title: "NOUS CONTACTER",
